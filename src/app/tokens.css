@@ -1,0 +1,14 @@
+/* Brand tokens */
+:root {
+  --brand-color-primary: #0F172A;
+  --brand-color-secondary: #2563EB;
+  --brand-color-accent: #38BDF8;
+  --brand-color-background: #0B0F19;
+  --brand-color-surface: #1E293B;
+  --brand-color-surface-hover: #334155;
+  --brand-color-text: #F8FAFC;
+  --brand-color-text-muted: #94A3B8;
+  --brand-color-border: #334155;
+  --brand-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --brand-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
