@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+:root {
+  --background: var(--brand-color-background);
+  --foreground: var(--brand-color-text);
+}
+
+@theme inline {
+  --color-brand-primary: var(--brand-color-primary);
+  --color-brand-secondary: var(--brand-color-secondary);
+  --color-brand-accent: var(--brand-color-accent);
+  --color-brand-bg: var(--brand-color-background);
+  --color-brand-surface: var(--brand-color-surface);
+  --color-brand-surface-hover: var(--brand-color-surface-hover);
+  --color-brand-text: var(--brand-color-text);
+  --color-brand-muted: var(--brand-color-text-muted);
+  --color-brand-border: var(--brand-color-border);
+  --font-brand-sans: var(--brand-font-sans);
+  --font-brand-mono: var(--brand-font-mono);
+}
+
+body {
+  background: var(--brand-color-background);
+  color: var(--brand-color-text);
+  font-family: var(--brand-font-sans);
+}
