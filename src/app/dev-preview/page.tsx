@@ -1,57 +1,64 @@
 "use client";
 
-import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
-import { SectionWrapper } from "@/components/SectionWrapper";
-import { Card } from "@/components/Card";
-import { CtaButton } from "@/components/CtaButton";
+import {
+  SectionWrapper,
+  Container,
+  GlowCard,
+  Badge,
+  CtaButton,
+  Nav,
+  Hero,
+} from "@/components";
 
 export default function DevPreviewPage() {
-  if (process.env.NODE_ENV === "production" && !process.env.ENABLE_DEV_PREVIEW) {
-    return (
-      <main className="min-h-screen flex items-center justify-center p-6 text-brand-muted bg-brand-bg">
-        <p>Development preview disabled in production.</p>
-      </main>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-brand-bg text-brand-text flex flex-col">
       <Nav />
       <Hero />
-      <SectionWrapper id="preview-cards" badge="Preview Showcase" title="Shared Card Components" subtitle="Testing Card responsive layouts and CtaButton variants.">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <Card
-            variant="showcase"
-            category="Showcase Example"
-            badge="Featured"
-            title="Phương Trí Platform"
-            description="Enterprise Web & Digital Ecosystem authored via multi-agent pipelines."
-            tags={["Next.js", "Go", "PostgreSQL"]}
-            highlights={["Integrated audio/video player and VietQR booking flow.", "100% components and tests authored test-first."]}
-            footer={<CtaButton variant="outline" size="sm" href="#showcase">View Details</CtaButton>}
-          />
-          <Card
-            variant="collaboration"
-            category="Collaboration Model"
-            title="Dedicated Agent Squad"
-            description="Continuous development capacity managed by Principal Lead."
-            highlights={["Full pipeline autonomy (AM, TL, FE, BE, QA, DevOps)", "Strict 400 LOC PR limits and deterministic review gates"]}
-            footer={<CtaButton mailto="contact@familstorm.com" variant="primary" size="sm">Inquire via Email</CtaButton>}
-          />
+      <SectionWrapper
+        id="preview-tokens"
+        hasGlow
+        badge="Design Tokens"
+        title="Theme & Base Primitives"
+        subtitle="Verification of design tokens, layout wrappers, badges, glow cards, and CTA variants."
+      >
+        <div className="flex flex-wrap items-center gap-3 mb-8">
+          <Badge variant="default" pulse>Default Badge</Badge>
+          <Badge variant="accent" pulse>Accent Glow</Badge>
+          <Badge variant="success">Success</Badge>
+          <Badge variant="warning">Warning</Badge>
+          <Badge variant="error">Error</Badge>
+          <Badge variant="info">Info</Badge>
         </div>
-        <div className="p-6 rounded-xl bg-brand-surface border border-brand-border">
-          <h3 className="text-lg font-bold mb-4">CTA Button Variants &amp; Accessibility</h3>
-          <div className="flex flex-wrap items-center gap-4">
-            <CtaButton variant="primary" href="#test">Primary Link</CtaButton>
-            <CtaButton variant="secondary" href="#test">Secondary Link</CtaButton>
-            <CtaButton variant="outline" mailto="lead@familstorm.com">Mailto CTA</CtaButton>
-            <CtaButton variant="ghost" tel="+84912345678">Tel CTA</CtaButton>
-            <CtaButton variant="outline" iconOnly ariaLabel="Settings icon action" onClick={() => {}}>
-              <span aria-hidden="true">⚙</span>
-            </CtaButton>
-          </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <GlowCard>
+            <h4 className="text-lg font-bold text-white mb-2">GlowCard One</h4>
+            <p className="text-sm text-slate-400 mb-4">Glassmorphic surface with 16px blur and hover glow.</p>
+            <Badge variant="accent">Glass Surface</Badge>
+          </GlowCard>
+          <GlowCard>
+            <h4 className="text-lg font-bold text-white mb-2">GlowCard Two</h4>
+            <p className="text-sm text-slate-400 mb-4">Responsive across 1440px, 768px, 375px.</p>
+            <Badge variant="info">Fluid Layout</Badge>
+          </GlowCard>
+          <GlowCard>
+            <h4 className="text-lg font-bold text-white mb-2">GlowCard Three</h4>
+            <p className="text-sm text-slate-400 mb-4">Matching Stitch redesign specification.</p>
+            <Badge variant="success">Verified</Badge>
+          </GlowCard>
         </div>
+
+        <div className="card-glass p-6 rounded-2xl mb-8 flex flex-wrap items-center gap-4">
+          <CtaButton variant="primary" size="lg" href="#preview-tokens">Primary Large Glow</CtaButton>
+          <CtaButton variant="secondary" size="md" href="https://github.com/fs-agent-system">Secondary Glass</CtaButton>
+          <CtaButton variant="outline" size="sm" mailto="lead@familstorm.com">Outline Mailto</CtaButton>
+          <CtaButton variant="ghost" size="md" tel="+84900000000">Ghost Phone</CtaButton>
+        </div>
+
+        <Container className="p-4 bg-slate-900/60 rounded-xl border border-slate-800 text-center">
+          <p className="text-slate-300 text-sm">Standard Container component enforcing max-w-6xl mx-auto px-6 boundary.</p>
+        </Container>
       </SectionWrapper>
     </div>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { Badge } from "./Badge";
+import { Container } from "./Container";
 
 export interface SectionWrapperProps {
   id?: string;
@@ -10,6 +12,8 @@ export interface SectionWrapperProps {
   containerClassName?: string;
   headerClassName?: string;
   as?: "section" | "div" | "article";
+  hasGlow?: boolean;
+  withBorder?: boolean;
 }
 
 export function SectionWrapper({
@@ -22,23 +26,24 @@ export function SectionWrapper({
   containerClassName = "",
   headerClassName = "",
   as: Component = "section",
+  hasGlow = false,
+  withBorder = true,
 }: SectionWrapperProps) {
+  const border = withBorder ? "border-b border-brand-border" : "";
+  const glow = hasGlow ? "hero-glow relative overflow-hidden" : "";
+
   return (
-    <Component id={id} className={`w-full py-16 md:py-20 lg:py-24 px-4 sm:px-6 border-b border-brand-border ${className}`}>
-      <div className={`max-w-6xl mx-auto w-full ${containerClassName}`}>
+    <Component id={id} className={`w-full py-[3.5rem] md:py-[6rem] ${border} ${glow} ${className}`.trim()}>
+      <Container className={containerClassName}>
         {(badge || title || subtitle) && (
-          <div className={`max-w-3xl mx-auto text-center mb-12 sm:mb-16 ${headerClassName}`}>
-            {badge && (
-              <span className="inline-block py-1 px-3 rounded-full bg-blue-900/40 border border-blue-500/30 text-brand-accent text-xs font-semibold uppercase tracking-wider mb-4">
-                {badge}
-              </span>
-            )}
-            {title && <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-text mb-4 tracking-tight">{title}</h2>}
+          <div className={`max-w-3xl mx-auto text-center mb-12 sm:mb-16 ${headerClassName}`.trim()}>
+            {badge && <div className="mb-4"><Badge variant="accent" pulse>{badge}</Badge></div>}
+            {title && <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text mb-4 tracking-tight">{title}</h2>}
             {subtitle && <p className="text-base sm:text-lg text-brand-muted leading-relaxed">{subtitle}</p>}
           </div>
         )}
         {children}
-      </div>
+      </Container>
     </Component>
   );
 }
