@@ -26,4 +26,9 @@ export { ShowcaseSection } from "./sections/ShowcaseSection";
 export type { ShowcaseSectionProps, ShowcaseProject } from "./sections/ShowcaseSection";
 export { MetricsSection } from "./sections/MetricsSection";
 export type { MetricsSectionProps, StatItem, ComparisonBar, ReviewGate } from "./sections/MetricsSection";
+export { CollaborationSection } from "./sections/CollaborationSection";
+export type { CollaborationSectionProps, CollaborationModel } from "./sections/CollaborationSection";
+export { ContactSection, FooterNav } from "./sections/ContactSection";
+export type { ContactSectionProps, ContactChannel, FooterLink, FooterNavProps } from "./sections/ContactSection";
+
 
