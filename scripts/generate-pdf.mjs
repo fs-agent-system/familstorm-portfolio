@@ -127,6 +127,15 @@ async function main() {
       fs.writeFileSync(publicPdfPath, pdfBuffer);
     }
 
+    // Mirror official quotation/capability PDF from datas/docs if present
+    const quoteSrc = path.join(rootDir, "datas", "docs", "familstorm-onevalue-capability-quote.pdf");
+    if (fs.existsSync(quoteSrc)) {
+      fs.copyFileSync(quoteSrc, path.join(outDir, "familstorm-onevalue-capability-quote.pdf"));
+      if (fs.existsSync(publicDir)) {
+        fs.copyFileSync(quoteSrc, path.join(publicDir, "familstorm-onevalue-capability-quote.pdf"));
+      }
+    }
+
     // Verify PDF header and minimum size
     const stats = fs.statSync(outPdfPath);
     const header = fs.readFileSync(outPdfPath, { encoding: "utf8", flag: "r" }).slice(0, 5);

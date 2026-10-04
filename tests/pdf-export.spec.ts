@@ -43,23 +43,45 @@ test.describe("PDF Export One-Pager", () => {
     await expect(page.getByText("Turnkey System Development")).toBeVisible();
   });
 
-  test("landing page includes working download button for capability one-pager", async ({ page }) => {
+  test("landing page includes working download button for official quotation and capability document", async ({ page }) => {
     await page.goto("/");
-    const downloadLink = page.locator('a[href="/familstorm-capability-onepager.pdf"]');
+    const downloadLink = page.locator('#pdf a[href="/familstorm-onevalue-capability-quote.pdf"]');
     await expect(downloadLink).toBeVisible();
     await expect(downloadLink).toHaveAttribute("download", "");
     await expect(downloadLink).toContainText("Download One-Pager (PDF)");
   });
 
-  test("generated PDF asset exists and meets integrity constraints", async () => {
-    const pdfPath = path.resolve(process.cwd(), "out", "familstorm-capability-onepager.pdf");
-    expect(fs.existsSync(pdfPath)).toBe(true);
+  test("footer and nav PDF links point to official quotation document", async ({ page }) => {
+    await page.goto("/dev-preview");
+    const navPdfLink = page.locator('header nav a[href="/familstorm-onevalue-capability-quote.pdf"]');
+    await expect(navPdfLink).toBeVisible();
+    await expect(navPdfLink).toHaveText("PDF");
 
-    const stats = fs.statSync(pdfPath);
+    await page.goto("/");
+    const footerPdfLink = page.locator('footer a[href="/familstorm-onevalue-capability-quote.pdf"]');
+    await expect(footerPdfLink).toBeVisible();
+    await expect(footerPdfLink).toHaveText("Capability (PDF)");
+  });
+
+  test("clicking and requesting PDF download serves file directly with HTTP 200 and application/pdf", async ({ request }) => {
+    const quoteRes = await request.get("/familstorm-onevalue-capability-quote.pdf");
+    expect(quoteRes.status()).toBe(200);
+    expect(quoteRes.headers()["content-type"]).toBe("application/pdf");
+
+    const onepagerRes = await request.get("/familstorm-capability-onepager.pdf");
+    expect(onepagerRes.status()).toBe(200);
+    expect(onepagerRes.headers()["content-type"]).toBe("application/pdf");
+  });
+
+  test("generated and official PDF assets exist and meet integrity constraints", async () => {
+    const officialPdfPath = path.resolve(process.cwd(), "out", "familstorm-onevalue-capability-quote.pdf");
+    expect(fs.existsSync(officialPdfPath)).toBe(true);
+
+    const stats = fs.statSync(officialPdfPath);
     // PDF should be reasonably sized (>50KB) with embedded fonts/vectors
     expect(stats.size).toBeGreaterThan(50 * 1024);
 
-    const content = fs.readFileSync(pdfPath, "latin1");
+    const content = fs.readFileSync(officialPdfPath, "latin1");
     // Valid PDF signature
     expect(content.startsWith("%PDF-")).toBe(true);
 

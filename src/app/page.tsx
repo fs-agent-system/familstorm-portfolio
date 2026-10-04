@@ -47,7 +47,7 @@ export default function Home() {
           </p>
           <div>
             <a
-              href="/familstorm-capability-onepager.pdf"
+              href="/familstorm-onevalue-capability-quote.pdf"
               download
               className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-base font-semibold rounded-lg bg-brand-secondary text-white hover:bg-blue-600 transition-colors shadow-lg hover:shadow-blue-500/25"
             >

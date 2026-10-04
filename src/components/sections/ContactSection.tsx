@@ -42,6 +42,7 @@ const DEFAULT_CHANNELS: ContactChannel[] = [
 const DEFAULT_LINKS: FooterLink[] = [
   { label: "Back to Top", href: "#hero" },
   { label: "Print / PDF", href: "/print" },
+  { label: "Capability (PDF)", href: "/familstorm-onevalue-capability-quote.pdf" },
   { label: "Dev Preview", href: "/dev-preview" },
 ];
 
@@ -77,7 +78,12 @@ export function FooterNav({
       <div className="text-center sm:text-left">{legal}</div>
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
         {links.map((link) => (
-          <a key={link.href} href={link.href} className="hover:text-slate-300 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-accent rounded">
+          <a
+            key={link.href}
+            href={link.href}
+            {...(link.href.endsWith(".pdf") ? { download: true } : {})}
+            className="hover:text-slate-300 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-accent rounded"
+          >
             {link.label}
           </a>
         ))}

@@ -20,6 +20,7 @@ const DEFAULT_ITEMS: NavItem[] = [
   { label: "Workflow", href: "#workflow" },
   { label: "Showcase", href: "#showcase" },
   { label: "Collaboration", href: "#collaboration" },
+  { label: "PDF", href: "/familstorm-onevalue-capability-quote.pdf" },
 ];
 
 export function Nav({
@@ -31,18 +32,23 @@ export function Nav({
 }: NavProps) {
   return (
     <header className={`sticky top-0 z-50 w-full bg-brand-bg/90 backdrop-blur-md border-b border-brand-border ${className}`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-        <a href="#hero" className="text-lg sm:text-xl font-bold text-brand-text tracking-tight hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
+        <a href="#hero" className="text-lg sm:text-xl font-bold text-brand-text tracking-tight hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded shrink-0">
           {brandName}
         </a>
-        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-3 lg:gap-6">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-2 lg:gap-6">
           {items.map((item) => (
-            <a key={item.href} href={item.href} className="text-xs lg:text-sm text-brand-muted hover:text-brand-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-0.5 whitespace-nowrap">
+            <a
+              key={item.href}
+              href={item.href}
+              {...(item.href.endsWith(".pdf") ? { download: true } : {})}
+              className="text-xs lg:text-sm text-brand-muted hover:text-brand-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-0.5 whitespace-nowrap"
+            >
               {item.label}
             </a>
           ))}
         </nav>
-        <CtaButton href={ctaHref} variant="primary" size="sm">{ctaLabel}</CtaButton>
+        <CtaButton href={ctaHref} variant="primary" size="sm" className="shrink-0">{ctaLabel}</CtaButton>
       </div>
     </header>
   );
