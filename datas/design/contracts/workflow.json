@@ -1,0 +1,59 @@
+{
+  "id": "workflow",
+  "name": "Delivery Pipeline Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Visualize the 8-phase P0-P8 software delivery lifecycle governed by strict entry and exit criteria.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "border": "brand.border",
+    "accent": "brand.accent",
+    "stepNumberColor": "#2563EB"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" }
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "METHODOLOGY",
+      "title": "Delivery Pipeline (P0–P8)",
+      "description": "Deterministic phase transitions with automated validation at every boundary."
+    },
+    {
+      "name": "PipelineSteps",
+      "type": "StepTrack",
+      "steps": [
+        { "phase": "P0–P2", "title": "Intake & Scope Lock", "desc": "Requirements converted to immutable scope contract and parent Epic." },
+        { "phase": "P3–P4", "title": "Architecture & Design", "desc": "TL drafts TDR; Designer produces tokenized Design Contract." },
+        { "phase": "P5", "title": "Test-First Build", "desc": "Dev agents implement test-first; all PRs capped at ≤ 400 LOC." },
+        { "phase": "P6", "title": "Dual Parallel Review", "desc": "Independent approval from TL (architecture) and QA (test completeness)." },
+        { "phase": "P7–P8", "title": "Automated Deploy & Acceptance", "desc": "Promotion to staging, headless E2E verification, manager-gated release." }
+      ]
+    },
+    {
+      "name": "ContributionMatrix",
+      "type": "ProgressTable",
+      "columns": ["Lifecycle Stage", "AI Autonomous Execution", "Human Oversight & Approval", "Division of Responsibility"],
+      "data": [
+        { "stage": "Requirement & Scope Definition", "ai": "60%", "human": "40%", "role": "Human locks business goals; AI structures scope & writes specs" },
+        { "stage": "Architecture & TDR Drafting", "ai": "70%", "human": "30%", "role": "AI drafts modular contracts; Human Architect approves" },
+        { "stage": "Code Implementation", "ai": "85%", "human": "15%", "role": "AI writes production code in small PRs; Human spot-checks" },
+        { "stage": "Unit & Integration Testing", "ai": "90%", "human": "10%", "role": "AI writes mock fixtures, edge tests, and regression tests" },
+        { "stage": "E2E & Acceptance Testing", "ai": "85%", "human": "15%", "role": "AI scripts Playwright/headless tests; Human validates visual fidelity" },
+        { "stage": "CI/CD & Deployment", "ai": "80%", "human": "20%", "role": "AI configures containers & pipelines; Human controls deploy gate" }
+      ]
+    }
+  ],
+  "states": {
+    "default": "Continuous track connecting phases with glowing status nodes.",
+    "hover": "Hovering over phase card emphasizes its inputs, deliverables, and automated gates."
+  },
+  "responsive": {
+    "desktop": "Horizontal 5-step process flow with connector bars; full comparison table.",
+    "mobile": "Vertical accordion / step timeline; compact stat bars for AI/Human ratio."
+  }
+}

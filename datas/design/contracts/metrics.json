@@ -1,0 +1,67 @@
+{
+  "id": "metrics",
+  "name": "Velocity & Quality Metrics Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Demonstrate quantifiable business velocity and quality assurance advantages over traditional offshore dev.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "border": "brand.border",
+    "accent": "brand.accent",
+    "metricHighlight": "#38BDF8"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" }
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "QUANTIFIABLE METRICS",
+      "title": "Velocity & Rigorous QA",
+      "description": "Measurable output advantages benchmarked against traditional engineering benchmarks."
+    },
+    {
+      "name": "TopStatBanner",
+      "type": "StatsRow",
+      "items": [
+        { "value": "2.5x–3x", "label": "Turnaround Velocity", "detail": "Faster delivery vs traditional teams" },
+        { "value": "24–48h", "label": "Module Cycle", "detail": "TDR to passing staging deployment" },
+        { "value": "6–8 wks", "label": "Full Platform", "detail": "Enterprise platform production ready" },
+        { "value": "60%–70%", "label": "Effort Reduction", "detail": "Fewer engineering hours needed" },
+        { "value": "50%–60%", "label": "TCO Cost Savings", "detail": "Lower total cost of ownership" }
+      ]
+    },
+    {
+      "name": "ComparisonBars",
+      "type": "BenchmarkComparison",
+      "bars": [
+        { "metric": "Standard Module Cycle", "traditional": "1–2 weeks", "familstorm": "24–48 hours", "speedup": "5x faster" },
+        { "metric": "Full Platform Delivery", "traditional": "4–6 months", "familstorm": "6–8 weeks", "speedup": "3x faster" },
+        { "metric": "Engineering Headcount", "traditional": "8–10 engineers", "familstorm": "2–3 specialists", "speedup": "70% leaner" },
+        { "metric": "Human Labor Hours", "traditional": "100% baseline", "familstorm": "30%–40% effort", "speedup": "60–70% saved" }
+      ]
+    },
+    {
+      "name": "ReviewGatesList",
+      "type": "GateSequence",
+      "gates": [
+        { "number": "01", "name": "Gate 1: Scope Lock & Sizing", "rule": "PRs capped at ≤ 400 LOC" },
+        { "number": "02", "name": "Gate 2: CI-Smoke Gate", "rule": "Build + Linter + Typecheck + Unit pass" },
+        { "number": "03", "name": "Gate 3: Dual Parallel Review", "rule": "Independent TL + QA approval required" },
+        { "number": "04", "name": "Gate 4: Architectural Boundary Audit", "rule": "Headless boundary scripts run in CI" },
+        { "number": "05", "name": "Gate 5: Manager Release Approval", "rule": "Immutable RC SHA signed off before deploy" }
+      ]
+    }
+  ],
+  "states": {
+    "default": "Clean stat counters with animated visual progress bars comparing traditional vs Familstorm velocity.",
+    "hover": "Highlight comparison metrics on row hover."
+  },
+  "responsive": {
+    "desktop": "5-stat horizontal bar, 2-column comparison layout with gate list.",
+    "mobile": "Scrollable or wrapped stat cards, simplified horizontal bar charts, stacked review gates."
+  }
+}

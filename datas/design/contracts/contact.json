@@ -1,0 +1,49 @@
+{
+  "id": "contact",
+  "name": "Contact & Footer Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Provide straightforward contact options, direct communication channels, and legal copyright.",
+  "tokens": {
+    "background": "brand.surface",
+    "border": "brand.border",
+    "accent": "brand.accent",
+    "text": "brand.text",
+    "textMuted": "brand.textMuted"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" }
+  },
+  "components": [
+    {
+      "name": "ContactBox",
+      "type": "ActionBox",
+      "title": "Initiate an AI-Driven Engineering Pilot",
+      "description": "Discuss your upcoming platform, module acceleration, or technical partnership.",
+      "channels": [
+        { "type": "Phone", "value": "+84 372 395 110", "href": "tel:+84-372-395-110", "icon": "phone" },
+        { "type": "Email", "value": "ngochoacth53@gmail.com", "href": "mailto:ngochoacth53@gmail.com", "icon": "mail" },
+        { "type": "GitHub", "value": "github.com/familstorm", "href": "https://github.com/familstorm", "icon": "code" }
+      ]
+    },
+    {
+      "name": "FooterNav",
+      "type": "Footer",
+      "legal": "© 2026 Familstorm. Autonomous AI-Driven Software Engineering. All rights reserved.",
+      "links": [
+        { "label": "Back to Top", "href": "#hero" },
+        { "label": "Print / PDF", "href": "/print" },
+        { "label": "Dev Preview", "href": "/dev-preview" }
+      ]
+    }
+  ],
+  "states": {
+    "default": "Minimalist dark box with accessible high-contrast links and hover underline.",
+    "hover": "Contact pill turns bright accent border on hover."
+  },
+  "responsive": {
+    "desktop": "Horizontal 3-column contact pills with centered footer bar.",
+    "mobile": "Vertical list of tap-friendly contact buttons."
+  }
+}
