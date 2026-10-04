@@ -22,4 +22,8 @@ export { ArchitectureSection } from "./sections/ArchitectureSection";
 export type { ArchitectureSectionProps, DisciplineSpec } from "./sections/ArchitectureSection";
 export { WorkflowSection } from "./sections/WorkflowSection";
 export type { WorkflowSectionProps, PipelineStep, ContributionItem } from "./sections/WorkflowSection";
+export { ShowcaseSection } from "./sections/ShowcaseSection";
+export type { ShowcaseSectionProps, ShowcaseProject } from "./sections/ShowcaseSection";
+export { MetricsSection } from "./sections/MetricsSection";
+export type { MetricsSectionProps, StatItem, ComparisonBar, ReviewGate } from "./sections/MetricsSection";
 
