@@ -1,0 +1,59 @@
+{
+  "id": "showcase",
+  "name": "Production Showcase Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Provide verified proof of delivery across enterprise web and modular gaming systems.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "border": "brand.border",
+    "accent": "brand.accent",
+    "tagBg": "rgba(37, 99, 235, 0.12)",
+    "tagBorder": "rgba(56, 189, 248, 0.25)"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" },
+    "grid": "grid md:grid-cols-2 gap-8"
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "PROVEN TRACK RECORD",
+      "title": "Selected Project Showcase",
+      "description": "Real systems delivered via Familstorm AI-driven pipelines — from full-stack enterprise web to complex 2D game engines."
+    },
+    {
+      "name": "ShowcaseCards",
+      "type": "ProjectCardGrid",
+      "projects": [
+        {
+          "title": "Phương Trí Platform",
+          "domain": "phuongtri.com",
+          "category": "Enterprise Web & Digital Ecosystem",
+          "description": "A multimedia publishing and online consultation platform built for a commercial client.",
+          "stack": ["Next.js (SSR/SSG)", "Go REST Backend", "PostgreSQL", "Docker"],
+          "metrics": ["100% agent authored code", "AES-256 DB encryption", "VietQR automated billing", "Playwright E2E coverage"]
+        },
+        {
+          "title": "Modular Game System",
+          "domain": "Lego-Block v3.0",
+          "category": "2D Hexagonal Grid System",
+          "description": "A complex 2D hex-grid game engine built to stress-test architectural discipline under AI-driven development.",
+          "stack": ["Godot Engine 4.x", "Strict GDScript", "Native SQLite (GDExtension)", "Cross-Platform"],
+          "metrics": ["46+ automated test suites", "10-phase pluggable pipeline", "7 domain event buses", "O(1) Fog of War"]
+        }
+      ]
+    }
+  ],
+  "states": {
+    "default": "Two balanced feature cards with dark obsidian surface, glass pill tags, and tech stack badges.",
+    "hover": "Subtle border gradient illumination and tech tag hover animation."
+  },
+  "responsive": {
+    "desktop": "2-column side-by-side card grid",
+    "mobile": "Single column vertical stack"
+  }
+}

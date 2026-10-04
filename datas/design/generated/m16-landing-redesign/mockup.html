@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Familstorm — AI-Driven Development | Autonomous Engineering Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#0F172A',
+              secondary: '#2563EB',
+              accent: '#38BDF8',
+              bg: '#0B0F19',
+              surface: '#1E293B',
+              'surface-hover': '#334155',
+              text: '#F8FAFC',
+              muted: '#94A3B8',
+              border: '#334155',
+              'border-muted': '#1E293B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body {
+      background-color: #0B0F19;
+      color: #F8FAFC;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, rgba(56, 189, 248, 0.05) 50%, rgba(11, 15, 25, 0) 80%);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #FFFFFF 20%, #38BDF8 65%, #2563EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-glass {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.7);
+    }
+    .card-glass:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F19] text-[#F8FAFC] antialiased min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-[#0B0F19]/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/30 group-hover:bg-sky-500 transition-colors">
+          F
+        </div>
+        <span class="font-bold text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">Familstorm</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#overview" class="hover:text-sky-400 transition-colors">Overview</a>
+        <a href="#architecture" class="hover:text-sky-400 transition-colors">Architecture</a>
+        <a href="#workflow" class="hover:text-sky-400 transition-colors">Pipeline</a>
+        <a href="#showcase" class="hover:text-sky-400 transition-colors">Showcase</a>
+        <a href="#metrics" class="hover:text-sky-400 transition-colors">Velocity</a>
+        <a href="#collaboration" class="hover:text-sky-400 transition-colors">Models</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-blue-600 text-white hover:bg-sky-500 transition-all shadow-md shadow-blue-600/30">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- 1. Hero Section -->
+    <section id="hero" class="relative pt-24 pb-20 px-6 hero-glow border-b border-slate-800/80 overflow-hidden">
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/60 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-8 shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+          Autonomous Engineering Studio
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-gradient">
+          Familstorm — AI-Driven Development
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+          Enterprise Software &amp; Complex Systems Engineered via Multi-Agent AI Pipelines.
+          We orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+          <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 text-base font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/30 hover:shadow-sky-500/40">
+            Initiate Pilot Project
+          </a>
+          <a href="#overview" class="w-full sm:w-auto px-8 py-3.5 text-base font-semibold rounded-xl card-glass text-slate-200 hover:text-white hover:border-slate-600 transition-all">
+            Explore Operating Model
+          </a>
+        </div>
+
+        <!-- Trust Strip -->
+        <div class="pt-8 border-t border-slate-800/60 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div class="p-3 text-center">
+            <div class="text-2xl font-bold text-white tracking-tight">100%</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Deterministic Gates</div>
+          </div>
+          <div class="p-3 text-center">
+            <div class="text-2xl font-bold text-sky-400 tracking-tight">2.5x–3x</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Velocity Speedup</div>
+          </div>
+          <div class="p-3 text-center">
+            <div class="text-2xl font-bold text-white tracking-tight">≤ 400 LOC</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Atomic PR Rigor</div>
+          </div>
+          <div class="p-3 text-center">
+            <div class="text-2xl font-bold text-sky-400 tracking-tight">Zero Leaks</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Boundary Enforced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Overview Section -->
+    <section id="overview" class="py-20 px-6 border-b border-slate-800/80">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Foundation</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Familstorm Overview</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Familstorm is an engineering studio based in Vietnam pioneering AI-Driven Development (AI駆動開発). We do not use AI as an ad-hoc conversational assistant; rather, we orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight. We deliver enterprise-grade web applications, secure backends, and complex game systems at substantially higher speed and lower cost than traditional manual software teams.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="card-glass p-8 rounded-2xl transition-all duration-300">
+            <div class="w-10 h-10 rounded-lg bg-blue-900/40 border border-blue-500/30 flex items-center justify-center text-sky-400 mb-6 font-bold text-lg">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Core Human Leadership</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              2–3 Senior Specialists (System Architect / Principal Engineer, Product &amp; Account Lead) directing strategy and architectural integrity.
+            </p>
+          </div>
+
+          <div class="card-glass p-8 rounded-2xl transition-all duration-300">
+            <div class="w-10 h-10 rounded-lg bg-sky-900/40 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-6 font-bold text-lg">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Human Responsibility</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              High-level system architecture, scope boundary definition, security policy enforcement, and final release approvals.
+            </p>
+          </div>
+
+          <div class="card-glass p-8 rounded-2xl transition-all duration-300">
+            <div class="w-10 h-10 rounded-lg bg-indigo-900/40 border border-indigo-500/30 flex items-center justify-center text-sky-400 mb-6 font-bold text-lg">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Operating Model</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              A lean core directs autonomous agent teams, eliminating the overhead, communication drag, and inconsistency of large manual dev benches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AI Agent Architecture Section -->
+    <section id="architecture" class="py-20 px-6 border-b border-slate-800/80 bg-slate-950/40">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">System Topology</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">AI Agent Architecture</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Our development ecosystem operates through specialized, role-isolated AI agents running on the Hermes Agent framework with deterministic boundaries.
+          </p>
+        </div>
+
+        <div class="card-glass p-6 sm:p-10 rounded-2xl mb-10 overflow-x-auto">
+          <svg viewBox="0 0 920 330" class="w-full h-auto min-w-[700px] block" role="img" aria-label="Familstorm AI Agent Architecture Diagram">
+            <title>Familstorm AI Agent Architecture Diagram</title>
+            <desc>Orchestration flow from AM/PC and Technical Lead to Domain Developers, UI/UX Designer, QA, and DevOps agents.</desc>
+            <path d="M 270 90 L 270 130 M 650 90 L 650 130 M 115 130 L 805 130 M 115 130 L 115 165 M 345 130 L 345 165 M 575 130 L 575 165 M 805 130 L 805 165" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4 4" />
+            <g>
+              <rect x="110" y="20" width="320" height="70" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="2" />
+              <text x="130" y="47" fill="#38BDF8" font-size="14" font-weight="700">AM / PC (Account Manager &amp; PC)</text>
+              <text x="130" y="69" fill="#94A3B8" font-size="11">Intake parsing, scope locking, lifecycle coordination</text>
+            </g>
+            <g>
+              <rect x="490" y="20" width="320" height="70" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="2" />
+              <text x="510" y="47" fill="#38BDF8" font-size="14" font-weight="700">TL (Technical Lead)</text>
+              <text x="510" y="69" fill="#94A3B8" font-size="11">Architecture blueprints, TDR contracts (≤ 400 LOC)</text>
+            </g>
+            <g>
+              <rect x="15" y="165" width="200" height="135" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+              <text x="30" y="195" fill="#38BDF8" font-size="13" font-weight="700">Designer Agent</text>
+              <text x="30" y="220" fill="#94A3B8" font-size="11">UI/UX Design Brief JSONs</text>
+              <text x="30" y="240" fill="#94A3B8" font-size="11">Tokenized design systems</text>
+              <text x="30" y="260" fill="#94A3B8" font-size="11">UITokens.gd &amp; CSS tokens</text>
+            </g>
+            <g>
+              <rect x="230" y="165" width="230" height="135" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+              <text x="245" y="195" fill="#38BDF8" font-size="13" font-weight="700">Domain Dev Agents</text>
+              <text x="245" y="220" fill="#94A3B8" font-size="11">Frontend (Next.js, Tailwind)</text>
+              <text x="245" y="240" fill="#94A3B8" font-size="11">Backend (Go, PostgreSQL)</text>
+              <text x="245" y="260" fill="#94A3B8" font-size="11">Game (Godot 4.x, GDScript)</text>
+            </g>
+            <g>
+              <rect x="475" y="165" width="200" height="135" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+              <text x="490" y="195" fill="#38BDF8" font-size="13" font-weight="700">QA &amp; Verification</text>
+              <text x="490" y="220" fill="#94A3B8" font-size="11">TDD harness creation</text>
+              <text x="490" y="240" fill="#94A3B8" font-size="11">Playwright E2E suites</text>
+              <text x="490" y="260" fill="#94A3B8" font-size="11">Automated regression suites</text>
+            </g>
+            <g>
+              <rect x="690" y="165" width="215" height="135" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+              <text x="705" y="195" fill="#38BDF8" font-size="13" font-weight="700">DevOps Agent</text>
+              <text x="705" y="220" fill="#94A3B8" font-size="11">CI/CD pipeline automation</text>
+              <text x="705" y="240" fill="#94A3B8" font-size="11">Docker containerization</text>
+              <text x="705" y="260" fill="#94A3B8" font-size="11">Automated staging promotion</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <div class="card-glass p-6 rounded-xl border border-slate-800">
+            <h4 class="font-bold text-white mb-2 text-base">Role Isolation</h4>
+            <p class="text-slate-400">Agents interact strictly through GitHub issues, pull requests, and automated review gates. Zero direct uncontracted state leak.</p>
+          </div>
+          <div class="card-glass p-6 rounded-xl border border-slate-800">
+            <h4 class="font-bold text-white mb-2 text-base">Context Containment</h4>
+            <p class="text-slate-400">Role-specific playbooks, strict markdown contracts, and automated validation tests keep reasoning windows lean and focused.</p>
+          </div>
+          <div class="card-glass p-6 rounded-xl border border-slate-800">
+            <h4 class="font-bold text-white mb-2 text-base">Continuous Verification</h4>
+            <p class="text-slate-400">Every single PR requires independent parallel sign-offs from Technical Lead (architecture) and QA Agent (test completeness).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Delivery Pipeline Section -->
+    <section id="workflow" class="py-20 px-6 border-b border-slate-800/80">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Methodology</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Delivery Pipeline (P0–P8)</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Deterministic phase transitions with automated validation at every boundary.
+          </p>
+        </div>
+
+        <!-- 5 Steps Flow -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
+          <div class="card-glass p-5 rounded-xl border-l-4 border-l-blue-500">
+            <div class="text-xs font-mono font-bold text-sky-400 mb-1">P0–P2</div>
+            <div class="font-bold text-white text-sm mb-2">Intake &amp; Scope Lock</div>
+            <p class="text-xs text-slate-400 leading-normal">Client requirements converted into an immutable Original Scope Source and parent Epic.</p>
+          </div>
+          <div class="card-glass p-5 rounded-xl border-l-4 border-l-blue-500">
+            <div class="text-xs font-mono font-bold text-sky-400 mb-1">P3–P4</div>
+            <div class="font-bold text-white text-sm mb-2">Architecture &amp; Design</div>
+            <p class="text-xs text-slate-400 leading-normal">TL defines TDRs and machine-checkable acceptance criteria; Designer produces tokenized specs.</p>
+          </div>
+          <div class="card-glass p-5 rounded-xl border-l-4 border-l-blue-500">
+            <div class="text-xs font-mono font-bold text-sky-400 mb-1">P5</div>
+            <div class="font-bold text-white text-sm mb-2">Test-First Build</div>
+            <p class="text-xs text-slate-400 leading-normal">Dev agents implement modules test-first; each PR must pass automated ci-smoke.</p>
+          </div>
+          <div class="card-glass p-5 rounded-xl border-l-4 border-l-blue-500">
+            <div class="text-xs font-mono font-bold text-sky-400 mb-1">P6</div>
+            <div class="font-bold text-white text-sm mb-2">Dual Parallel Review</div>
+            <p class="text-xs text-slate-400 leading-normal">TL reviews architectural purity while QA reviews test coverage in parallel before merge.</p>
+          </div>
+          <div class="card-glass p-5 rounded-xl border-l-4 border-l-sky-400">
+            <div class="text-xs font-mono font-bold text-sky-400 mb-1">P7–P8</div>
+            <div class="font-bold text-white text-sm mb-2">Deploy &amp; Acceptance</div>
+            <p class="text-xs text-slate-400 leading-normal">Automated promotion to staging environments, headless verification, and manager-gated release.</p>
+          </div>
+        </div>
+
+        <!-- Contribution Matrix -->
+        <div class="card-glass rounded-2xl p-6 sm:p-8 overflow-hidden">
+          <h3 class="text-lg font-bold text-white mb-6 flex items-center justify-between">
+            <span>AI Autonomous Execution vs Human Governance</span>
+            <span class="text-xs font-normal text-slate-400 font-mono">Division of Responsibility</span>
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 text-xs uppercase tracking-wider">
+                  <th class="py-3 px-4 font-semibold">Lifecycle Stage</th>
+                  <th class="py-3 px-4 font-semibold">AI Autonomous Execution</th>
+                  <th class="py-3 px-4 font-semibold">Human Governance &amp; Oversight</th>
+                  <th class="py-3 px-4 font-semibold">Specific Responsibility Split</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">Requirement &amp; Scope Definition</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">60%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">40%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">Human locks business goals; AI structures scope &amp; writes specs</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">Architecture &amp; TDR Drafting</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">70%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">30%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">AI drafts modular contracts; Human Architect approves</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">Code Implementation</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">85%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">15%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">AI writes production code in small PRs (&le; 400 LOC); Human spot-checks</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">Unit &amp; Integration Testing</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">90%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">10%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">AI writes mock fixtures, edge tests, and regression tests</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">E2E &amp; Acceptance Testing</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">85%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">15%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">AI scripts Playwright/headless tests; Human validates visual fidelity</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-medium text-white">CI/CD &amp; Deployment</td>
+                  <td class="py-3 px-4 text-sky-400 font-mono font-semibold">80%</td>
+                  <td class="py-3 px-4 text-slate-400 font-mono">20%</td>
+                  <td class="py-3 px-4 text-xs text-slate-400">AI configures containers &amp; pipelines; Human controls deploy gate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Selected Project Showcase Section -->
+    <section id="showcase" class="py-20 px-6 border-b border-slate-800/80 bg-slate-950/40">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Proven Track Record</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Selected Project Showcase</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Real systems delivered via Familstorm AI-driven pipelines — from full-stack enterprise web to complex 2D game engines.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="card-glass p-8 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold font-mono uppercase tracking-wider text-sky-400 bg-blue-950/60 border border-sky-500/30 px-3 py-1 rounded-full">
+                  Enterprise Web &amp; Ecosystem
+                </span>
+                <span class="text-xs text-slate-400 font-mono">phuongtri.com</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Phương Trí Platform</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                A multimedia publishing and online consultation platform built for a commercial client with automated VietQR billing and lecture streaming.
+              </p>
+
+              <div class="mb-6">
+                <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tech Stack</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Next.js (SSR/SSG)</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Go REST Backend</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">PostgreSQL</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Docker</span>
+                </div>
+              </div>
+
+              <div class="space-y-2 mb-8">
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>Integrated audio/video player for lectures, dynamic VietQR booking flow.</span>
+                </div>
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>AES-256 database column encryption, 2FA (TOTP), RBAC, audit logging.</span>
+                </div>
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>100% components, Go micro-services, and Playwright tests authored by AI agents.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Status: Delivered &amp; Active</span>
+              <a href="https://phuongtri.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                Visit Platform &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="card-glass p-8 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold font-mono uppercase tracking-wider text-sky-400 bg-blue-950/60 border border-sky-500/30 px-3 py-1 rounded-full">
+                  2D Hexagonal Grid System
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Lego-Block v3.0</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Modular Game System</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                A highly complex 2D hex-grid game engine built to stress-test architectural discipline and automated verification under AI-driven development.
+              </p>
+
+              <div class="mb-6">
+                <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tech Stack</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Godot Engine 4.x</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Strict GDScript</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Native SQLite (GDExtension)</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Cross-Platform</span>
+                </div>
+              </div>
+
+              <div class="space-y-2 mb-8">
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>ECS-lite hybrid Node foundation with 10-phase pluggable Step Pipeline.</span>
+                </div>
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>7 domain event buses and 4-tier real-time O(1) Fog of War differential algorithm.</span>
+                </div>
+                <div class="text-xs text-slate-300 flex items-start gap-2">
+                  <span class="text-sky-400 font-bold">&#10003;</span>
+                  <span>46+ automated unit/integration suites (100% PASS) run headlessly in CI.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Status: Verified in CI</span>
+              <span class="text-xs font-semibold text-slate-500">Benchmark Engine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Velocity & Quality Metrics Section -->
+    <section id="metrics" class="py-20 px-6 border-b border-slate-800/80">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Quantifiable Metrics</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Velocity &amp; Rigorous QA</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Measurable output advantages benchmarked against traditional offshore software development teams.
+          </p>
+        </div>
+
+        <!-- 5-Metric Highlights -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
+          <div class="card-glass p-6 rounded-xl text-center">
+            <div class="text-3xl font-extrabold text-sky-400 font-mono mb-1">2.5x–3x</div>
+            <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Turnaround Velocity</div>
+            <div class="text-xs text-slate-400">Faster delivery than traditional offshore teams</div>
+          </div>
+          <div class="card-glass p-6 rounded-xl text-center">
+            <div class="text-3xl font-extrabold text-white font-mono mb-1">24–48h</div>
+            <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Module Cycle</div>
+            <div class="text-xs text-slate-400">From TDR contract to passing staging deploy</div>
+          </div>
+          <div class="card-glass p-6 rounded-xl text-center">
+            <div class="text-3xl font-extrabold text-sky-400 font-mono mb-1">6–8 wks</div>
+            <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Full Platform</div>
+            <div class="text-xs text-slate-400">Complete multi-tier systems deployed</div>
+          </div>
+          <div class="card-glass p-6 rounded-xl text-center">
+            <div class="text-3xl font-extrabold text-white font-mono mb-1">60%–70%</div>
+            <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Effort Reduction</div>
+            <div class="text-xs text-slate-400">Human engineering hours saved</div>
+          </div>
+          <div class="card-glass p-6 rounded-xl text-center">
+            <div class="text-3xl font-extrabold text-sky-400 font-mono mb-1">50%–60%</div>
+            <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">TCO Cost Savings</div>
+            <div class="text-xs text-slate-400">Lower total cost of ownership</div>
+          </div>
+        </div>
+
+        <!-- Benchmarks & Review Gates Side by Side -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <!-- Comparison Bars -->
+          <div class="card-glass p-8 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-6">Delivery Velocity Comparison</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span class="text-white">Standard Module Cycle</span>
+                  <span class="text-sky-400 font-mono">5x faster</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-1">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 100%"></div>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-sky-400 h-full rounded-full" style="width: 20%"></div>
+                </div>
+                <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                  <span>Traditional: 1–2 weeks</span>
+                  <span class="text-sky-300 font-semibold">Familstorm: 24–48h</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span class="text-white">Full Platform Delivery</span>
+                  <span class="text-sky-400 font-mono">3x faster</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-1">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 100%"></div>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-sky-400 h-full rounded-full" style="width: 35%"></div>
+                </div>
+                <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                  <span>Traditional: 4–6 months</span>
+                  <span class="text-sky-300 font-semibold">Familstorm: 6–8 weeks</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span class="text-white">Engineering Headcount Needed</span>
+                  <span class="text-sky-400 font-mono">70% leaner</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-1">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 100%"></div>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-sky-400 h-full rounded-full" style="width: 25%"></div>
+                </div>
+                <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                  <span>Traditional: 8–10 engineers</span>
+                  <span class="text-sky-300 font-semibold">Familstorm: 2–3 specialists</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sequential Review Gates -->
+          <div class="card-glass p-8 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-6">Deterministic Quality Gates</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-xs font-mono font-bold text-sky-400 px-2 py-1 bg-blue-950 rounded border border-blue-800">01</span>
+                <div>
+                  <div class="text-sm font-bold text-white">Scope Lock &amp; Sizing (TDR Bound)</div>
+                  <div class="text-xs text-slate-400 mt-0.5">PRs strictly capped at &le; 400 LOC to ensure deterministic reviewability.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-xs font-mono font-bold text-sky-400 px-2 py-1 bg-blue-950 rounded border border-blue-800">02</span>
+                <div>
+                  <div class="text-sm font-bold text-white">CI-Smoke Gate (Automated Build)</div>
+                  <div class="text-xs text-slate-400 mt-0.5">Automated build, linter, typecheck, and unit test pass required before review.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-xs font-mono font-bold text-sky-400 px-2 py-1 bg-blue-950 rounded border border-blue-800">03</span>
+                <div>
+                  <div class="text-sm font-bold text-white">Dual Parallel Review (TL + QA)</div>
+                  <div class="text-xs text-slate-400 mt-0.5">Simultaneous independent approvals from Technical Lead and QA Agent.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-xs font-mono font-bold text-sky-400 px-2 py-1 bg-blue-950 rounded border border-blue-800">04</span>
+                <div>
+                  <div class="text-sm font-bold text-white">Architectural Boundary Audit</div>
+                  <div class="text-xs text-slate-400 mt-0.5">Headless scripts reject code if domain boundaries or circular deps leak.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-xs font-mono font-bold text-sky-400 px-2 py-1 bg-blue-950 rounded border border-blue-800">05</span>
+                <div>
+                  <div class="text-sm font-bold text-white">Manager Release Approval</div>
+                  <div class="text-xs text-slate-400 mt-0.5">Immutable release-candidate SHA signed off by Human Lead before deploy.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Collaboration Models Section -->
+    <section id="collaboration" class="py-20 px-6 border-b border-slate-800/80 bg-slate-950/40">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Engagement</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Collaboration Models</h2>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Tailored partnership structures designed for international tech enterprises, fast-growth ventures, and strategic investors.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Model 1 -->
+          <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-blue-950/80 border border-sky-500/30 px-2.5 py-1 rounded-md">
+                Dedicated Pod
+              </span>
+              <h3 class="text-lg font-bold text-white mt-4 mb-2">AI-Driven Dedicated Team (AI-ODC)</h3>
+              <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                A high-throughput, low-overhead dedicated pod delivering continuous features and accelerated module cycles.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Autonomous agent execution</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Daily verifiable test outputs</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Zero recruitment lag</li>
+              </ul>
+            </div>
+            <a href="#contact" class="w-full text-center py-2 text-xs font-semibold rounded-lg bg-blue-600/30 text-sky-300 border border-blue-500/40 hover:bg-blue-600 hover:text-white transition-all">
+              Discuss Pod Setup
+            </a>
+          </div>
+
+          <!-- Model 2 -->
+          <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-blue-950/80 border border-sky-500/30 px-2.5 py-1 rounded-md">
+                Milestone-Based
+              </span>
+              <h3 class="text-lg font-bold text-white mt-4 mb-2">Turnkey System Development</h3>
+              <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                Fixed-scope or milestone-based delivery for enterprise web applications, high-throughput APIs, and complex gaming modules.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Rigid TDR contract spec</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Predictable milestones</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Full IP &amp; test ownership</li>
+              </ul>
+            </div>
+            <a href="#contact" class="w-full text-center py-2 text-xs font-semibold rounded-lg bg-blue-600/30 text-sky-300 border border-blue-500/40 hover:bg-blue-600 hover:text-white transition-all">
+              Request Scope Lock
+            </a>
+          </div>
+
+          <!-- Model 3 -->
+          <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-blue-950/80 border border-sky-500/30 px-2.5 py-1 rounded-md">
+                Co-Development
+              </span>
+              <h3 class="text-lg font-bold text-white mt-4 mb-2">Technical Partnership / JV</h3>
+              <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                Co-developing proprietary AI-native software products targeting international enterprise and consumer markets.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Shared IP &amp; synergy</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Rapid prototyping to PMF</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Autonomous dev pipelines</li>
+              </ul>
+            </div>
+            <a href="#contact" class="w-full text-center py-2 text-xs font-semibold rounded-lg bg-blue-600/30 text-sky-300 border border-blue-500/40 hover:bg-blue-600 hover:text-white transition-all">
+              Explore JV Model
+            </a>
+          </div>
+
+          <!-- Model 4 -->
+          <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-blue-950/80 border border-sky-500/30 px-2.5 py-1 rounded-md">
+                Strategic Capital
+              </span>
+              <h3 class="text-lg font-bold text-white mt-4 mb-2">Strategic Investment &amp; M&amp;A</h3>
+              <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                Open to strategic capital partnership, equity investment, or acquisition by tech groups looking to absorb proven AI operations.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Proven P0-P8 IP pipelines</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> High operational leverage</li>
+                <li class="flex items-start gap-1.5"><span class="text-sky-400">&bull;</span> Lean 2-3 human core ratio</li>
+              </ul>
+            </div>
+            <a href="#contact" class="w-full text-center py-2 text-xs font-semibold rounded-lg bg-blue-600/30 text-sky-300 border border-blue-500/40 hover:bg-blue-600 hover:text-white transition-all">
+              Direct Inquiries
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact & Footer Section -->
+    <section id="contact" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="card-glass p-10 sm:p-14 rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-950/50">
+          <span class="text-xs font-bold tracking-widest text-sky-400 uppercase">Get in Touch</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Initiate an AI-Driven Engineering Pilot</h2>
+          <p class="text-slate-400 text-base max-w-xl mx-auto mb-10 leading-relaxed">
+            Ready to explore high-velocity autonomous pipelines for your enterprise platform or gaming modules? Direct consultation with our Principal Architect.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+            <a href="tel:+84-372-395-110" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700/80 hover:border-sky-400 transition-colors flex flex-col items-center">
+              <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">Direct Phone</span>
+              <span class="text-sm font-semibold text-white font-mono">+84 372 395 110</span>
+            </a>
+            <a href="mailto:ngochoacth53@gmail.com" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700/80 hover:border-sky-400 transition-colors flex flex-col items-center">
+              <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">Direct Email</span>
+              <span class="text-sm font-semibold text-white font-mono truncate max-w-full">ngochoacth53@gmail.com</span>
+            </a>
+            <a href="https://github.com/familstorm" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700/80 hover:border-sky-400 transition-colors flex flex-col items-center">
+              <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">GitHub Org</span>
+              <span class="text-sm font-semibold text-white font-mono">github.com/familstorm</span>
+            </a>
+          </div>
+
+          <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div>
+              &copy; 2026 Familstorm. Autonomous AI-Driven Software Engineering. All rights reserved.
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="#hero" class="hover:text-slate-300 transition-colors">Back to Top</a>
+              <a href="/print" class="hover:text-slate-300 transition-colors">Print / PDF</a>
+              <a href="/dev-preview" class="hover:text-slate-300 transition-colors">Dev Preview</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

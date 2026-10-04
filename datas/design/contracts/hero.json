@@ -1,0 +1,66 @@
+{
+  "id": "hero",
+  "name": "Hero Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Introduce Familstorm as an autonomous engineering studio with immediate value proposition and primary CTAs.",
+  "tokens": {
+    "background": "brand.background",
+    "gradient": "gradients.heroGlow",
+    "headlineColor": "gradients.accentText",
+    "subtextColor": "brand.textMuted",
+    "badgeBg": "rgba(37, 99, 235, 0.15)",
+    "badgeBorder": "rgba(56, 189, 248, 0.3)"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "6rem", "mobile": "4rem" },
+    "alignment": "center"
+  },
+  "components": [
+    {
+      "name": "KickerBadge",
+      "type": "Badge",
+      "text": "Autonomous Engineering Studio",
+      "style": "pill, border-accent-glow"
+    },
+    {
+      "name": "MainHeadline",
+      "type": "H1",
+      "text": "Familstorm — AI-Driven Development",
+      "style": "heroDisplay gradient text"
+    },
+    {
+      "name": "LeadParagraph",
+      "type": "Paragraph",
+      "text": "Enterprise Software & Complex Systems Engineered via Multi-Agent AI Pipelines. Governed by deterministic quality gates and human-in-the-loop architecture oversight.",
+      "style": "lead max-w-3xl mx-auto text-brand-muted"
+    },
+    {
+      "name": "CtaButtonGroup",
+      "type": "ButtonGroup",
+      "items": [
+        { "label": "Get in Touch", "href": "#contact", "variant": "primary", "glow": true },
+        { "label": "Explore Overview", "href": "#overview", "variant": "secondaryGlass" }
+      ]
+    },
+    {
+      "name": "TrustStrip",
+      "type": "StatPills",
+      "items": [
+        { "value": "100%", "label": "Deterministic Gates" },
+        { "value": "2.5x–3x", "label": "Velocity Speedup" },
+        { "value": "≤ 400 LOC", "label": "Atomic PR Rigor" }
+      ]
+    }
+  ],
+  "states": {
+    "default": "Clean glowing backdrop with crisp typography and subtle floating animation on trust strip.",
+    "hover": "CTA primary glows blue on hover; secondary glass background brightens.",
+    "focus": "High contrast ring (#38BDF8) on keyboard focus."
+  },
+  "responsive": {
+    "desktop": "Centered text, horizontal CTA row, horizontal trust strip pills.",
+    "mobile": "Text scales from 3.75rem to 2.25rem, full-width stacked CTA buttons, 2x2 trust strip grid."
+  }
+}

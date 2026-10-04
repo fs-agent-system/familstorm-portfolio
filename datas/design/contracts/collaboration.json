@@ -1,0 +1,71 @@
+{
+  "id": "collaboration",
+  "name": "Collaboration Models Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Lay out clear commercial engagement models for Japanese tech companies and strategic partners.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "border": "brand.border",
+    "accent": "brand.accent",
+    "badgeBg": "rgba(37, 99, 235, 0.15)"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" },
+    "grid": "grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "ENGAGEMENT",
+      "title": "Collaboration Models",
+      "description": "Tailored partnership structures designed for international tech enterprises, fast-growth ventures, and strategic investors."
+    },
+    {
+      "name": "ModelCards",
+      "type": "CardGrid",
+      "models": [
+        {
+          "code": "Model 01",
+          "badge": "Dedicated Pod",
+          "title": "AI-Driven Dedicated Team (AI-ODC)",
+          "desc": "High-throughput dedicated pod delivering continuous features and accelerated module cycles.",
+          "bullets": ["Autonomous agent execution", "Daily transparent progress", "Zero recruitment delay"]
+        },
+        {
+          "code": "Model 02",
+          "badge": "Milestone-Based",
+          "title": "Turnkey System Development",
+          "desc": "Fixed-scope delivery for enterprise web, high-throughput APIs, and complex game systems.",
+          "bullets": ["Rigid TDR contract specification", "Predictable delivery timeline", "Full code & test ownership"]
+        },
+        {
+          "code": "Model 03",
+          "badge": "Co-Development",
+          "title": "Technical Partnership / JV",
+          "desc": "Co-developing proprietary AI-native software products targeting international markets.",
+          "bullets": ["Shared IP synergy", "Rapid proof-of-concept", "Deep domain integration"]
+        },
+        {
+          "code": "Model 04",
+          "badge": "Strategic Capital",
+          "title": "Strategic Investment & M&A",
+          "desc": "Open to equity partnership or acquisition by technology groups adopting AI-native dev.",
+          "bullets": ["Proven P0-P8 pipeline IP", "High operational leverage", "Turnkey multi-agent tooling"]
+        }
+      ]
+    }
+  ],
+  "states": {
+    "default": "4 clean vertical cards with distinct badges and structured capability bullet lists.",
+    "hover": "Subtle card elevate with accent border glow."
+  },
+  "responsive": {
+    "desktop": "4-column grid",
+    "tablet": "2-column grid",
+    "mobile": "Single column vertical stack"
+  }
+}
