@@ -11,17 +11,55 @@
   --color-brand-secondary: var(--brand-color-secondary);
   --color-brand-accent: var(--brand-color-accent);
   --color-brand-bg: var(--brand-color-background);
+  --color-brand-bg-alt: var(--brand-color-background-alt);
   --color-brand-surface: var(--brand-color-surface);
   --color-brand-surface-hover: var(--brand-color-surface-hover);
+  --color-brand-surface-glass: var(--brand-color-surface-glass);
+  --color-brand-border: var(--brand-color-border);
+  --color-brand-border-muted: var(--brand-color-border-muted);
+  --color-brand-border-highlight: var(--brand-color-border-highlight);
   --color-brand-text: var(--brand-color-text);
   --color-brand-muted: var(--brand-color-text-muted);
-  --color-brand-border: var(--brand-color-border);
+  --color-brand-subtle: var(--brand-color-text-subtle);
+
+  --color-status-success: var(--status-color-success);
+  --color-status-warning: var(--status-color-warning);
+  --color-status-error: var(--status-color-error);
+  --color-status-info: var(--status-color-info);
+
   --font-brand-sans: var(--brand-font-sans);
   --font-brand-mono: var(--brand-font-mono);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-glow-blue: var(--shadow-glow-blue);
+  --shadow-glow-accent: var(--shadow-glow-accent);
 }
 
 body {
-  background: var(--brand-color-background);
+  background-color: var(--brand-color-background);
   color: var(--brand-color-text);
   font-family: var(--brand-font-sans);
+}
+
+.hero-glow {
+  background: var(--gradient-hero-glow);
+}
+
+.text-gradient {
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-glass {
+  background: var(--brand-color-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--brand-color-border);
+  transition: all 0.3s ease;
+}
+
+.card-glass:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: var(--shadow-glow-blue);
 }

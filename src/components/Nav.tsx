@@ -35,9 +35,9 @@ export function Nav({
         <a href="#hero" className="text-lg sm:text-xl font-bold text-brand-text tracking-tight hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
           {brandName}
         </a>
-        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-3 lg:gap-6">
           {items.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm text-brand-muted hover:text-brand-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-0.5">
+            <a key={item.href} href={item.href} className="text-xs lg:text-sm text-brand-muted hover:text-brand-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-0.5 whitespace-nowrap">
               {item.label}
             </a>
           ))}
