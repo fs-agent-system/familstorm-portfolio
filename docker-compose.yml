@@ -8,7 +8,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ${IMAGE_NAME:-ghcr.io/fs-agent-system/familstorm-portfolio:latest}
+    image: ${IMAGE_NAME:-ghcr.io/fs-agent-system/familstorm-portfolio:${IMAGE_TAG:-latest}}
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:80/ >/dev/null 2>&1 || exit 1"]
