@@ -4,6 +4,7 @@ import {
   ContactSection,
   Hero,
   MetricsSection,
+  Nav,
   OverviewSection,
   ShowcaseSection,
   WorkflowSection,
@@ -11,9 +12,11 @@ import {
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
-      {/* 1. Hero */}
-      <Hero />
+    <div className="min-h-screen flex flex-col">
+      <Nav />
+      <main className="flex-1 flex flex-col">
+        {/* 1. Hero */}
+        <Hero />
 
       {/* 2. Overview */}
       <OverviewSection />
@@ -63,5 +66,6 @@ export default function Home() {
       {/* 9. Contact & Footer */}
       <ContactSection />
     </main>
+    </div>
   );
 }
