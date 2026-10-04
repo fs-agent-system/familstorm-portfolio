@@ -18,4 +18,8 @@ export { HeroSection } from "./sections/HeroSection";
 export type { HeroSectionProps } from "./sections/HeroSection";
 export { OverviewSection } from "./sections/OverviewSection";
 export type { OverviewSectionProps, PillarCard } from "./sections/OverviewSection";
+export { ArchitectureSection } from "./sections/ArchitectureSection";
+export type { ArchitectureSectionProps, DisciplineSpec } from "./sections/ArchitectureSection";
+export { WorkflowSection } from "./sections/WorkflowSection";
+export type { WorkflowSectionProps, PipelineStep, ContributionItem } from "./sections/WorkflowSection";
 

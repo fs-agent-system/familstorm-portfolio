@@ -1,12 +1,4 @@
-import { Card, Hero, OverviewSection } from "@/components";
-
-const WORKFLOW_STEPS = [
-  { phase: "P0–P2", title: "Intake & Scope Lock", desc: "Client requirements converted into an immutable Original Scope Source and parent Epic." },
-  { phase: "P3–P4", title: "Architecture & Design", desc: "TL defines TDRs and machine-checkable acceptance criteria; Designer produces tokenized specs." },
-  { phase: "P5", title: "Test-First Build", desc: "Dev agents implement modules test-first; each PR must pass automated ci-smoke." },
-  { phase: "P6", title: "Dual Parallel Review", desc: "TL reviews architectural purity while QA reviews test coverage in parallel before merge." },
-  { phase: "P7–P8", title: "Automated Deploy & Acceptance", desc: "Automated promotion to staging environments, headless verification, and manager-gated release." },
-];
+import { ArchitectureSection, Card, Hero, OverviewSection, WorkflowSection } from "@/components";
 
 const SHOWCASE_PROJECTS = [
   {
@@ -35,15 +27,6 @@ const SHOWCASE_PROJECTS = [
       "Custom headless architectural boundary scripts (check_architecture_boundaries.sh) running without GUI.",
     ],
   },
-];
-
-const CONTRIBUTION_DATA = [
-  { stage: "Requirement & Scope Definition", ai: "60%", human: "40%", role: "Human locks business goals; AI structures scope & writes specs" },
-  { stage: "Architecture & TDR Drafting", ai: "70%", human: "30%", role: "AI drafts modular contracts; Human Architect approves" },
-  { stage: "Code Implementation", ai: "85%", human: "15%", role: "AI writes production code in small PRs (≤ 400 LOC); Human spot-checks" },
-  { stage: "Unit & Integration Testing", ai: "90%", human: "10%", role: "AI writes mock fixtures, edge tests, and regression tests" },
-  { stage: "E2E & Acceptance Testing", ai: "85%", human: "15%", role: "AI scripts Playwright/headless tests; Human validates visual fidelity" },
-  { stage: "CI/CD & Deployment", ai: "80%", human: "20%", role: "AI configures containers & pipelines; Human controls deploy gate" },
 ];
 
 const COMPARISON_STATS = [
@@ -123,82 +106,10 @@ export default function Home() {
       <OverviewSection />
 
       {/* 3. AI Agent Architecture */}
-      <section id="architecture" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">AI Agent Architecture</h2>
-          <p className="text-brand-muted leading-relaxed">
-            Our development ecosystem operates through specialized, role-isolated AI agents running on the Hermes Agent framework with deterministic boundaries.
-          </p>
-        </div>
-        <div className="p-4 sm:p-8 rounded-2xl bg-brand-surface border border-brand-border overflow-hidden">
-          <svg viewBox="0 0 920 330" className="w-full h-auto block" role="img" aria-label="Familstorm AI Agent Architecture Diagram">
-            <title>Familstorm AI Agent Architecture Diagram</title>
-            <desc>Orchestration flow from AM/PC and Technical Lead to Domain Developers, UI/UX Designer, QA, and DevOps agents.</desc>
-            <path d="M 270 90 L 270 130 M 650 90 L 650 130 M 115 130 L 805 130 M 115 130 L 115 165 M 345 130 L 345 165 M 575 130 L 575 165 M 805 130 L 805 165" fill="none" stroke="#334155" strokeWidth="2" strokeDasharray="4 4" />
-            <g>
-              <rect x="110" y="20" width="320" height="70" rx="8" fill="#0B0F19" stroke="#2563EB" strokeWidth="1.5" />
-              <text x="130" y="47" fill="#38BDF8" fontSize="14" fontWeight="700">AM / PC (Account Manager &amp; PC)</text>
-              <text x="130" y="69" fill="#94A3B8" fontSize="11">Intake parsing, scope locking, lifecycle coordination</text>
-            </g>
-            <g>
-              <rect x="490" y="20" width="320" height="70" rx="8" fill="#0B0F19" stroke="#2563EB" strokeWidth="1.5" />
-              <text x="510" y="47" fill="#38BDF8" fontSize="14" fontWeight="700">TL (Technical Lead)</text>
-              <text x="510" y="69" fill="#94A3B8" fontSize="11">Architecture blueprints, TDR contracts (≤ 400 LOC)</text>
-            </g>
-            <g>
-              <rect x="15" y="165" width="200" height="135" rx="8" fill="#0B0F19" stroke="#334155" strokeWidth="1.5" />
-              <text x="30" y="195" fill="#38BDF8" fontSize="13" fontWeight="700">Designer Agent</text>
-              <text x="30" y="220" fill="#94A3B8" fontSize="11">UI/UX Design Brief JSONs</text>
-              <text x="30" y="240" fill="#94A3B8" fontSize="11">Tokenized design systems</text>
-              <text x="30" y="260" fill="#94A3B8" fontSize="11">UITokens.gd &amp; CSS tokens</text>
-            </g>
-            <g>
-              <rect x="230" y="165" width="230" height="135" rx="8" fill="#0B0F19" stroke="#334155" strokeWidth="1.5" />
-              <text x="245" y="195" fill="#38BDF8" fontSize="13" fontWeight="700">Domain Dev Agents</text>
-              <text x="245" y="220" fill="#94A3B8" fontSize="11">Frontend (Next.js, Tailwind)</text>
-              <text x="245" y="240" fill="#94A3B8" fontSize="11">Backend (Go, PostgreSQL)</text>
-              <text x="245" y="260" fill="#94A3B8" fontSize="11">Game (Godot 4.x, GDScript)</text>
-            </g>
-            <g>
-              <rect x="475" y="165" width="200" height="135" rx="8" fill="#0B0F19" stroke="#334155" strokeWidth="1.5" />
-              <text x="490" y="195" fill="#38BDF8" fontSize="13" fontWeight="700">QA &amp; Verification</text>
-              <text x="490" y="220" fill="#94A3B8" fontSize="11">TDD harness creation</text>
-              <text x="490" y="240" fill="#94A3B8" fontSize="11">Playwright E2E suites</text>
-              <text x="490" y="260" fill="#94A3B8" fontSize="11">Automated regression suites</text>
-            </g>
-            <g>
-              <rect x="690" y="165" width="215" height="135" rx="8" fill="#0B0F19" stroke="#334155" strokeWidth="1.5" />
-              <text x="705" y="195" fill="#38BDF8" fontSize="13" fontWeight="700">DevOps Agent</text>
-              <text x="705" y="220" fill="#94A3B8" fontSize="11">CI/CD pipeline automation</text>
-              <text x="705" y="240" fill="#94A3B8" fontSize="11">Docker containerization</text>
-              <text x="705" y="260" fill="#94A3B8" fontSize="11">Staging &amp; production rollout</text>
-            </g>
-          </svg>
-        </div>
-      </section>
+      <ArchitectureSection />
 
       {/* 4. Development Workflow */}
-      <section id="workflow" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">Development Workflow</h2>
-          <p className="text-brand-muted leading-relaxed">
-            Our industrial P0 → P8 Delivery Pipeline enforces rigorous quality gates at every phase.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          {WORKFLOW_STEPS.map((step) => (
-            <div key={step.phase} className="p-5 rounded-xl bg-brand-surface border border-brand-border hover:border-brand-accent/50 hover:bg-brand-surface-hover transition duration-200 flex flex-col justify-between">
-              <div>
-                <span className="inline-block px-2.5 py-1 rounded bg-blue-900/40 text-brand-accent font-mono text-xs font-semibold mb-3 border border-blue-500/20">
-                  {step.phase}
-                </span>
-                <h3 className="text-base font-semibold text-brand-text mb-2">{step.title}</h3>
-                <p className="text-xs text-brand-muted leading-relaxed">{step.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <WorkflowSection />
 
       {/* 5. Real Projects Showcase */}
       <section id="showcase" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
@@ -245,50 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. AI Contribution */}
-      <section id="contribution" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">AI Contribution by Development Stage</h2>
-          <p className="text-brand-muted leading-relaxed">
-            Deterministic allocation of responsibilities between autonomous AI agents and senior human specialists.
-          </p>
-        </div>
-        <div className="overflow-x-auto rounded-xl border border-brand-border bg-brand-surface">
-          <table className="w-full text-left border-collapse text-sm">
-            <caption className="p-4 text-left font-semibold text-base text-brand-text border-b border-brand-border">
-              AI Contribution by Development Stage
-            </caption>
-            <thead className="bg-brand-bg/60 border-b border-brand-border text-brand-text font-semibold">
-              <tr>
-                <th scope="col" className="p-4">Development Stage</th>
-                <th scope="col" className="p-4 text-center">AI Agent Share</th>
-                <th scope="col" className="p-4 text-center">Human Expert Share</th>
-                <th scope="col" className="p-4">Key Role of Human / AI</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-brand-border text-brand-muted">
-              {CONTRIBUTION_DATA.map((row) => (
-                <tr key={row.stage} className="hover:bg-brand-surface-hover/50 transition-colors">
-                  <th scope="row" className="p-4 font-medium text-brand-text whitespace-nowrap">{row.stage}</th>
-                  <td className="p-4 text-center whitespace-nowrap">
-                    <span className="inline-block font-mono font-bold text-brand-accent px-2.5 py-0.5 rounded bg-blue-950/60 border border-blue-800/40">
-                      {row.ai}
-                    </span>
-                  </td>
-                  <td className="p-4 text-center whitespace-nowrap">
-                    <span className="inline-block font-mono font-medium text-brand-text px-2.5 py-0.5 rounded bg-slate-800/60 border border-slate-700/40">
-                      {row.human}
-                    </span>
-                  </td>
-                  <td className="p-4 text-xs leading-relaxed">{row.role}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* 7. Time & Cost Comparison */}
+      {/* 6. Time & Cost Comparison */}
       <section id="metrics" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">Time &amp; Cost Comparison</h2>
