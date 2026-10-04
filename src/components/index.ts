@@ -13,4 +13,9 @@ export type { CardProps } from "./Card";
 export { Nav } from "./Nav";
 export type { NavProps, NavItem } from "./Nav";
 export { Hero } from "./Hero";
-export type { HeroProps } from "./Hero";
+export type { HeroProps, TrustStatItem } from "./Hero";
+export { HeroSection } from "./sections/HeroSection";
+export type { HeroSectionProps } from "./sections/HeroSection";
+export { OverviewSection } from "./sections/OverviewSection";
+export type { OverviewSectionProps, PillarCard } from "./sections/OverviewSection";
+

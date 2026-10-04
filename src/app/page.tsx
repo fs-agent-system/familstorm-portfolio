@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card";
+import { Card, Hero, OverviewSection } from "@/components";
 
 const WORKFLOW_STEPS = [
   { phase: "P0–P2", title: "Intake & Scope Lock", desc: "Client requirements converted into an immutable Original Scope Source and parent Epic." },
@@ -117,57 +117,10 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
       {/* 1. Hero */}
-      <section id="hero" className="py-24 px-6 max-w-6xl mx-auto w-full text-center border-b border-brand-border">
-        <span className="inline-block py-1 px-3 rounded-full bg-blue-900/40 border border-blue-500/30 text-brand-accent text-xs font-semibold uppercase tracking-wider mb-6">
-          Autonomous Engineering Studio
-        </span>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brand-text mb-6">
-          Familstorm — AI-Driven Development
-        </h1>
-        <p className="text-lg md:text-xl text-brand-muted max-w-3xl mx-auto mb-10 leading-relaxed">
-          Enterprise Software &amp; Complex Systems Engineered via Multi-Agent AI Pipelines.
-          We orchestrate an end-to-end multi-agent AI system governed by deterministic
-          quality gates and human-in-the-loop architecture oversight.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a href="#contact" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg bg-brand-secondary text-white hover:bg-blue-600 transition-colors shadow-lg hover:shadow-blue-500/25">
-            Get in Touch
-          </a>
-          <a href="#overview" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg bg-brand-surface text-brand-text border border-brand-border hover:bg-brand-surface-hover transition-colors">
-            Explore Overview
-          </a>
-        </div>
-      </section>
+      <Hero />
 
       {/* 2. Overview */}
-      <section id="overview" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">Familstorm Overview</h2>
-          <p className="text-brand-muted leading-relaxed">
-            Familstorm is an engineering studio based in Vietnam pioneering AI-Driven Development (AI駆動開発). We do not use AI as an ad-hoc conversational assistant; rather, we orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight. We deliver enterprise-grade web applications, secure backends, and complex game systems at substantially higher speed and lower cost than traditional manual software teams.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl bg-brand-surface border border-brand-border">
-            <h3 className="text-lg font-semibold text-brand-accent mb-2">Core Human Engineering &amp; Leadership</h3>
-            <p className="text-sm text-brand-muted leading-relaxed">
-              2–3 Senior Specialists (System Architect / Principal Engineer, Product &amp; Account Lead) directing strategy and architectural integrity.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-brand-surface border border-brand-border">
-            <h3 className="text-lg font-semibold text-brand-accent mb-2">Human Responsibility</h3>
-            <p className="text-sm text-brand-muted leading-relaxed">
-              High-level system architecture, scope boundary definition, security policy enforcement, and final release approvals.
-            </p>
-          </div>
-          <div className="p-6 rounded-xl bg-brand-surface border border-brand-border">
-            <h3 className="text-lg font-semibold text-brand-accent mb-2">Operating Model</h3>
-            <p className="text-sm text-brand-muted leading-relaxed">
-              A lean core directs autonomous agent teams, eliminating the overhead, communication drag, and inconsistency of large manual dev benches.
-            </p>
-          </div>
-        </div>
-      </section>
+      <OverviewSection />
 
       {/* 3. AI Agent Architecture */}
       <section id="architecture" className="py-20 px-6 max-w-6xl mx-auto w-full border-b border-brand-border">
