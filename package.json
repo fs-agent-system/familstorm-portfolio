@@ -9,6 +9,7 @@
     "build:pdf": "node scripts/generate-pdf.mjs",
     "test": "playwright test",
     "test:pdf": "playwright test",
+    "test:visual": "node scripts/compare-visuals.mjs",
     "start": "next start",
     "lint": "eslint"
   },
