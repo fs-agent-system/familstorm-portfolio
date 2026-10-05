@@ -1,0 +1,65 @@
+{
+  "id": "architecture",
+  "name": "AI Agent Architecture Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Provide architectural transparency on the multi-agent hierarchy, role isolation, and execution pipelines.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "border": "brand.border",
+    "diagramNodeBg": "#0F172A",
+    "diagramNodeBorder": "#2563EB",
+    "diagramAccent": "#38BDF8"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" }
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "SYSTEM TOPOLOGY",
+      "title": "AI Agent Architecture",
+      "description": "Our development ecosystem operates through specialized, role-isolated AI agents running on the Hermes Agent framework with deterministic boundaries."
+    },
+    {
+      "name": "ArchitectureDiagram",
+      "type": "InteractiveDiagram",
+      "format": "Responsive SVG + Card Breakdown",
+      "layers": [
+        {
+          "tier": "Orchestration & Governance",
+          "roles": ["AM / PC (Intake parsing, scope lock)", "TL (System blueprints, TDR contracts)"]
+        },
+        {
+          "tier": "Execution Agents",
+          "roles": [
+            "Designer Agent (UI/UX specs, design tokens)",
+            "Domain Dev Agents (Frontend, Backend, Game)",
+            "QA & Verification Agent (TDD harnesses, Playwright E2E)",
+            "DevOps Agent (CI/CD, Docker, Staging)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DisciplineSpecs",
+      "type": "KeyAttributeList",
+      "items": [
+        { "title": "Role Isolation", "desc": "Agents communicate via GitHub issue contracts, PRs, and review gates." },
+        { "title": "Context Containment", "desc": "Role playbooks, locked schemas, and deterministic test harnesses." },
+        { "title": "Verification Automation", "desc": "Zero code merges without green ci-smoke and dual TL+QA parallel sign-off." }
+      ]
+    }
+  ],
+  "states": {
+    "default": "High-contrast SVG pipeline diagram with distinct node grouping and connector tracks.",
+    "hover": "Role nodes reveal operational details and boundary constraints on hover."
+  },
+  "responsive": {
+    "desktop": "Horizontal 2-tier tree diagram with SVG connector lines.",
+    "mobile": "Reflows into a vertical stack of structured agent role cards with phase badges."
+  }
+}

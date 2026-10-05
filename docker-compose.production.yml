@@ -1,0 +1,5 @@
+# docker-compose.production.yml — OVERLAY production v2. Dùng với -p <slug>-production.
+services:
+  web:
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT_PROD:-8241}:80"

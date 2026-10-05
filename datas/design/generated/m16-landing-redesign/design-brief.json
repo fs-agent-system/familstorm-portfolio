@@ -1,0 +1,131 @@
+{
+  "version": "design-brief/v2",
+  "project": "familstorm-portfolio",
+  "issue": 16,
+  "screen_id": "FS-WEB-01",
+  "page": "Familstorm Capability Landing Page",
+  "route": "/",
+  "design_mode": "CREATE",
+  "stack": {
+    "framework": "Next.js",
+    "ui": "Tailwind CSS"
+  },
+  "brand": {
+    "source": "datas/design/contracts/TOKENS.json",
+    "colors": {
+      "primary": "#0F172A",
+      "secondary": "#2563EB",
+      "accent": "#38BDF8",
+      "bg": "#0B0F19",
+      "surface": "#1E293B",
+      "text": "#F8FAFC"
+    },
+    "typography": {
+      "heading": "Inter, system-ui, sans-serif",
+      "body": "Inter, system-ui, sans-serif",
+      "scale": "Hero 60px/48px, H1 48px/36px, H2 36px/28px, H3 24px/20px, Body 16px/14px"
+    },
+    "tone": "Enterprise, Futuristic, Disciplined, High-Tech, Transparent"
+  },
+  "layout": {
+    "grid": "12-column grid, max-w-6xl (1200px), 24px gutters",
+    "breakpoints": {
+      "mobile": 375,
+      "tablet": 768,
+      "desktop": 1280
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "purpose": "Introduce Familstorm as an autonomous engineering studio with immediate value proposition and primary CTAs",
+      "components": ["badge", "heading", "subtext", "cta-buttons", "trust-pills"],
+      "content_ref": "datas/design/contracts/hero.json",
+      "responsive": "Desktop centered text + horizontal button row; Mobile stacked buttons + compact trust strip"
+    },
+    {
+      "id": "overview",
+      "purpose": "Define Familstorm's AI-driven identity, leadership ratio, and operating methodology",
+      "components": ["section-header", "pillar-card-grid", "ratio-badges"],
+      "content_ref": "datas/design/contracts/overview.json",
+      "responsive": "Desktop 3-column card grid; Mobile 1-column card stack"
+    },
+    {
+      "id": "architecture",
+      "purpose": "Provide architectural transparency on the multi-agent hierarchy, role isolation, and execution pipelines",
+      "components": ["section-header", "architecture-diagram", "role-cards", "boundary-specs"],
+      "content_ref": "datas/design/contracts/architecture.json",
+      "responsive": "Desktop horizontal tiered SVG diagram; Mobile reflows into structured role cards"
+    },
+    {
+      "id": "workflow",
+      "purpose": "Visualize the 8-phase P0-P8 software delivery lifecycle governed by strict entry and exit criteria",
+      "components": ["section-header", "step-timeline", "contribution-matrix"],
+      "content_ref": "datas/design/contracts/workflow.json",
+      "responsive": "Desktop 5-step horizontal flow + full matrix table; Mobile vertical step accordion + compact stat bars"
+    },
+    {
+      "id": "showcase",
+      "purpose": "Provide verified proof of delivery across enterprise web and modular gaming systems",
+      "components": ["section-header", "project-card-grid", "tech-stack-pills", "metric-badges"],
+      "content_ref": "datas/design/contracts/showcase.json",
+      "responsive": "Desktop 2-column feature card layout; Mobile 1-column card stack"
+    },
+    {
+      "id": "metrics",
+      "purpose": "Demonstrate quantifiable business velocity and quality assurance advantages over traditional offshore dev",
+      "components": ["section-header", "stat-banner", "comparison-bar-chart", "review-gate-timeline"],
+      "content_ref": "datas/design/contracts/metrics.json",
+      "responsive": "Desktop 5-stat banner + side-by-side comparison; Mobile wrapped stat cards + vertical gates"
+    },
+    {
+      "id": "collaboration",
+      "purpose": "Lay out clear commercial engagement models for Japanese tech companies and strategic partners",
+      "components": ["section-header", "pricing-card-grid", "deliverable-checklists"],
+      "content_ref": "datas/design/contracts/collaboration.json",
+      "responsive": "Desktop 4-column card grid; Tablet 2-column grid; Mobile 1-column stack"
+    },
+    {
+      "id": "contact",
+      "purpose": "Provide straightforward contact options, direct communication channels, and legal copyright",
+      "components": ["action-box", "contact-pills", "footer-navigation", "legal-notice"],
+      "content_ref": "datas/design/contracts/contact.json",
+      "responsive": "Desktop horizontal contact pills; Mobile full-width action links"
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "loading",
+    "empty",
+    "error"
+  ],
+  "accessibility": {
+    "contrast": "WCAG AA (minimum 4.5:1 on text elements against dark surface backgrounds)",
+    "focus": "Visible 2px #38BDF8 focus ring on all interactive elements (buttons, links)",
+    "alt": "Meaningful descriptive labels and ARIA descriptors on diagrams and illustrations"
+  },
+  "assets": {
+    "provided": [],
+    "generated_mockup": "datas/design/generated/m16-landing-redesign/mockup.html"
+  },
+  "visual_baseline": {
+    "source": "datas/design/generated/m16-landing-redesign/mockup.html",
+    "tolerance": {
+      "desktop_px": 8,
+      "mobile_px": 4,
+      "visual_diff_pct": 1.5
+    },
+    "deviations": []
+  },
+  "acceptance_refs": [
+    "AC-01-HIGH-FIDELITY-DESIGN",
+    "AC-02-DESIGN-TOKENS-ISOLATION",
+    "AC-03-SECTION-CONTRACTS",
+    "AC-04-DESIGN-BRIEF-COMMITTED",
+    "AC-05-PR-OPENED",
+    "AC-06-COMMENT-POSTED"
+  ],
+  "stitch_prompt": "Redesign Familstorm's capability landing page into a modern, enterprise-grade dark-themed portal (deep obsidian background #0B0F19, electric blue #2563EB, cyber cyan #38BDF8 accent, slate cards #1E293B with subtle frosted border lighting). Sections in exact order: 1. Hero with glowing gradient title 'Familstorm — AI-Driven Development', pill badge 'Autonomous Engineering Studio', lead copy on multi-agent deterministic pipelines, primary glowing CTA buttons, and trust metrics. 2. Overview section detailing the 2-3 senior specialist core human ratio and autonomous operating model across 3 glass cards. 3. AI Agent Architecture section featuring an interactive tiered diagram showing AM/PC and TL orchestration down to Designer, Frontend, Backend, Game Dev, QA, and DevOps agents with rigid boundary checks. 4. Delivery Pipeline P0-P8 displaying an 8-phase timeline track and an AI vs Human contribution progress matrix. 5. Selected Project Showcase highlighting Phuong Tri Enterprise Platform and Modular Game System with technical tags and production metrics. 6. Velocity & Quality Metrics with 2.5x-3x speedup banner, comparison bar charts vs traditional development, and 5 sequential review gates. 7. Collaboration Models presenting 4 engagement tiers (Dedicated Pod AI-ODC, Turnkey System, Co-Dev JV, Strategic Investment) across cards. 8. Contact & Footer with direct telephone, email, GitHub links, and clean copyright. Optimized for Next.js and Tailwind CSS with responsive mobile reflow."
+}

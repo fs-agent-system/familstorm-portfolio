@@ -1,0 +1,6 @@
+# docker-compose.staging.yml — OVERLAY staging v2. Dùng với -p <slug>-staging.
+# Publish web ra 127.0.0.1:<port> (port lấy từ registry.tsv, CI hoặc deploy script truyền qua env).
+services:
+  web:
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-8141}:80"

@@ -1,0 +1,57 @@
+{
+  "id": "overview",
+  "name": "Overview Section Contract",
+  "screen_id": "FS-WEB-01",
+  "version": "1.0",
+  "purpose": "Define Familstorm's AI-driven identity, leadership ratio, and operating methodology.",
+  "tokens": {
+    "background": "brand.background",
+    "surface": "brand.surface",
+    "cardBorder": "brand.border",
+    "accentTitle": "brand.accent"
+  },
+  "layout": {
+    "container": "max-w-6xl mx-auto px-6",
+    "paddingY": { "desktop": "5rem", "mobile": "3.5rem" },
+    "grid": "grid md:grid-cols-3 gap-6"
+  },
+  "components": [
+    {
+      "name": "SectionHeader",
+      "type": "HeaderBlock",
+      "eyebrow": "FOUNDATION",
+      "title": "Familstorm Overview",
+      "description": "Familstorm is an engineering studio based in Vietnam pioneering AI-Driven Development. We orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight."
+    },
+    {
+      "name": "PillarCards",
+      "type": "CardGrid",
+      "cards": [
+        {
+          "title": "Core Human Leadership",
+          "body": "2–3 Senior Specialists (System Architect / Principal Engineer, Product & Account Lead) directing strategy and architectural integrity.",
+          "badge": "2-3 Specialists"
+        },
+        {
+          "title": "Human Responsibility",
+          "body": "High-level system architecture, scope boundary definition, security policy enforcement, and final release approvals.",
+          "badge": "Governance"
+        },
+        {
+          "title": "Operating Model",
+          "body": "A lean core directs autonomous agent teams, eliminating the overhead, communication drag, and inconsistency of large manual dev benches.",
+          "badge": "Autonomous Pods"
+        }
+      ]
+    }
+  ],
+  "states": {
+    "default": "3 pillar cards in solid dark surface with refined slate borders.",
+    "hover": "Subtle border lighting and 4px upward translation on cards."
+  },
+  "responsive": {
+    "desktop": "3-column grid",
+    "tablet": "2-column grid or single column with featured card",
+    "mobile": "1-column vertical stack"
+  }
+}
