@@ -52,8 +52,8 @@ export function ArchitectureSection({
         </div>
 
         <div className="overflow-x-auto -mx-2 px-2 pb-2">
-          <svg viewBox="0 0 920 330" className="w-full h-auto min-w-[700px] block" role="img" aria-label="Familstorm AI Agent Architecture Diagram">
-            <title>Familstorm AI Agent Architecture Diagram</title>
+          <svg viewBox="0 0 920 330" className="w-full h-auto min-w-[700px] block" role="img" aria-label="Hagdonit AI Agent Architecture Diagram">
+            <title>Hagdonit AI Agent Architecture Diagram</title>
             <desc>Orchestration flow from AM/PC and Technical Lead to Domain Developers, UI/UX Designer, QA, and DevOps agents.</desc>
             <path d="M 270 90 L 270 130 M 650 90 L 650 130 M 115 130 L 805 130 M 115 130 L 115 165 M 345 130 L 345 165 M 575 130 L 575 165 M 805 130 L 805 165" fill="none" stroke="#334155" strokeWidth="2" strokeDasharray="4 4" />
             <g>

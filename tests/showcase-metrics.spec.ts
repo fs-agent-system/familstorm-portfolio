@@ -10,7 +10,7 @@ test.describe("Showcase and Metrics Sections", () => {
     await expect(showcase).toBeVisible();
     await expect(showcase.getByText("PROVEN TRACK RECORD")).toBeVisible();
     await expect(showcase.locator("h2")).toHaveText("Selected Project Showcase");
-    await expect(showcase.getByText(/Real systems delivered via Familstorm AI-driven pipelines/i)).toBeVisible();
+    await expect(showcase.getByText(/Real systems delivered via Hagdonit AI-driven pipelines/i)).toBeVisible();
 
     // Card 1: Phương Trí Platform
     await expect(showcase.getByRole("heading", { name: "Phương Trí Platform" })).toBeVisible();
@@ -59,6 +59,10 @@ test.describe("Showcase and Metrics Sections", () => {
     for (const text of [
       "Delivery Velocity Comparison", "Standard Module Cycle", "Full Platform Delivery",
       "Engineering Headcount", "Human Labor Hours", "5x faster", "3x faster", "70% leaner", "60–70% saved",
+      "Traditional: 1–2 weeks", "Hagdonit: 24–48 hours",
+      "Traditional: 4–6 months", "Hagdonit: 6–8 weeks",
+      "Traditional: 8–10 engineers", "Hagdonit: 2–3 specialists",
+      "Traditional: 100% baseline", "Hagdonit: 30%–40% effort",
       "Deterministic Quality Gates",
     ]) {
       await expect(metrics.getByText(text)).toBeVisible();
