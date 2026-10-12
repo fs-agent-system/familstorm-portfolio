@@ -69,7 +69,7 @@ function ChannelIcon({ icon }: { icon?: string }) {
 }
 
 export function FooterNav({
-  legal = "© 2026 Familstorm. Autonomous AI-Driven Software Engineering. All rights reserved.",
+  legal = "© 2026 Hagdonit. Autonomous AI-Driven Software Engineering. All rights reserved.",
   links = DEFAULT_LINKS,
   className = "",
 }: FooterNavProps) {
@@ -98,7 +98,7 @@ export function ContactSection({
   title = "Initiate an AI-Driven Engineering Pilot",
   description = "Discuss your upcoming platform, module acceleration, or technical partnership.",
   channels = DEFAULT_CHANNELS,
-  legal = "© 2026 Familstorm. Autonomous AI-Driven Software Engineering. All rights reserved.",
+  legal = "© 2026 Hagdonit. Autonomous AI-Driven Software Engineering. All rights reserved.",
   links = DEFAULT_LINKS,
   className = "",
 }: ContactSectionProps) {
