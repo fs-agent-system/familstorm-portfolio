@@ -2,8 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Familstorm — Capability Brief One-Pager",
-  description: "Print-ready executive capability brief of Familstorm AI-Driven Development Studio.",
+  title: "Hagdonit — Capability Brief One-Pager",
+  description: "Print-ready executive capability brief of Hagdonit AI-Driven Development Studio.",
 };
 
 const WORKFLOW_STEPS = [
@@ -119,7 +119,7 @@ export default function PrintPage() {
           <header className="border-b border-brand-border pb-3 mb-4 flex flex-row items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xl font-extrabold tracking-tight text-brand-text">FAMILSTORM</span>
+                <span className="text-xl font-extrabold tracking-tight text-brand-text">HAGDONIT</span>
                 <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-900/50 text-brand-accent border border-blue-500/30">
                   AI-Driven Development Studio
                 </span>
@@ -235,7 +235,7 @@ export default function PrintPage() {
 
         {/* Page 1 Footer */}
         <div className="pt-2 border-t border-brand-border flex items-center justify-between text-[10px] text-brand-muted font-mono">
-          <span>Familstorm Studio · Vietnam</span>
+          <span>Hagdonit Studio · Vietnam</span>
           <span>Capability Brief One-Pager · Page 1 of 2</span>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function PrintPage() {
         <div>
           {/* Header Page 2 */}
           <div className="border-b border-brand-border pb-2 mb-4 flex items-center justify-between">
-            <div className="text-xs font-extrabold tracking-tight text-brand-text">FAMILSTORM · CAPABILITY BRIEF</div>
+            <div className="text-xs font-extrabold tracking-tight text-brand-text">HAGDONIT · CAPABILITY BRIEF</div>
             <div className="text-[10px] text-brand-accent font-mono">Velocity, Quality &amp; Engagement Models</div>
           </div>
 
@@ -340,7 +340,7 @@ export default function PrintPage() {
 
         {/* Page 2 Footer */}
         <div className="pt-2 border-t border-brand-border flex items-center justify-between text-[10px] text-brand-muted font-mono mt-3">
-          <span>&copy; 2026 Familstorm Studio. All rights reserved.</span>
+          <span>&copy; 2026 Hagdonit Studio. All rights reserved.</span>
           <span>Capability Brief One-Pager · Page 2 of 2</span>
         </div>
       </section>

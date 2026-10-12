@@ -5,10 +5,10 @@ import path from "node:path";
 test.describe("PDF Export One-Pager", () => {
   test("print route renders executive capability brief with all sections", async ({ page }) => {
     await page.goto("/print");
-    await expect(page).toHaveTitle(/Familstorm/);
+    await expect(page).toHaveTitle("Hagdonit — Capability Brief One-Pager");
 
     // Header & Leadership Contact
-    await expect(page.locator("header")).toContainText("FAMILSTORM");
+    await expect(page.locator("header")).toContainText("HAGDONIT");
     await expect(page.locator("header")).toContainText("AI-Driven Development Studio");
     await expect(page.locator("header")).toContainText("Phạm Ngọc Hòa");
     await expect(page.locator("header")).toContainText("ngochoacth53@gmail.com");
@@ -41,6 +41,10 @@ test.describe("PDF Export One-Pager", () => {
     // Section 6: Collaboration Models
     await expect(page.getByText("06. Engagement & Partnership Models")).toBeVisible();
     await expect(page.getByText("Turnkey System Development")).toBeVisible();
+
+    // Rebrand footers
+    await expect(page.getByText("Hagdonit Studio · Vietnam")).toBeVisible();
+    await expect(page.getByText("© 2026 Hagdonit Studio. All rights reserved.")).toBeVisible();
   });
 
   test("landing page includes working download button for official quotation and capability document", async ({ page }) => {

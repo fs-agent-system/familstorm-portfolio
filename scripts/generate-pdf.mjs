@@ -70,7 +70,7 @@ async function startServer() {
 
 async function main() {
   const isPostbuild = process.argv.includes("--postbuild");
-  console.log(`[generate-pdf] Generating PDF for Familstorm capability one-pager...`);
+  console.log(`[generate-pdf] Generating PDF for Hagdonit capability one-pager...`);
 
   let server;
   let browser;
