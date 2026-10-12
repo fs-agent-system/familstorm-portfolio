@@ -28,7 +28,7 @@ const DEFAULT_TRUST_STATS: TrustStatItem[] = [
 
 export function Hero({
   badge = "Autonomous Engineering Studio",
-  title = "Familstorm — AI-Driven Development",
+  title = "Hagdonit — AI-Driven Development",
   description = "Enterprise Software & Complex Systems Engineered via Multi-Agent AI Pipelines. Governed by deterministic quality gates and human-in-the-loop architecture oversight.",
   primaryCtaText = "Explore Architecture",
   primaryCtaHref = "#architecture",

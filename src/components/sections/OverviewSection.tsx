@@ -43,8 +43,8 @@ const DEFAULT_CARDS: PillarCard[] = [
 export function OverviewSection({
   id = "overview",
   eyebrow = "FOUNDATION",
-  title = "Familstorm Overview",
-  description = "Familstorm is an engineering studio based in Vietnam pioneering AI-Driven Development. We orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight.",
+  title = "Hagdonit Overview",
+  description = "Hagdonit is an engineering studio based in Vietnam pioneering AI-Driven Development. We orchestrate an end-to-end multi-agent AI system governed by deterministic quality gates and human-in-the-loop architecture oversight.",
   cards = DEFAULT_CARDS,
   className = "",
 }: OverviewSectionProps) {
