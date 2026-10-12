@@ -57,7 +57,7 @@ export function ShowcaseSection({
   id = "showcase",
   eyebrow = "PROVEN TRACK RECORD",
   title = "Selected Project Showcase",
-  description = "Real systems delivered via Familstorm AI-driven pipelines — from full-stack enterprise web to complex 2D game engines.",
+  description = "Real systems delivered via Hagdonit AI-driven pipelines — from full-stack enterprise web to complex 2D game engines.",
   projects = DEFAULT_PROJECTS,
   className = "",
 }: ShowcaseSectionProps) {

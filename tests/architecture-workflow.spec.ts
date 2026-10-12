@@ -16,7 +16,7 @@ test.describe("Architecture and Workflow Sections", () => {
     await expect(arch.getByText("Human-in-the-Loop Oversight")).toBeVisible();
     await expect(arch.getByText("Deterministic Boundaries", { exact: true })).toBeVisible();
 
-    const svg = arch.locator("svg[aria-label='Familstorm AI Agent Architecture Diagram']");
+    const svg = arch.locator("svg[aria-label='Hagdonit AI Agent Architecture Diagram']");
     await expect(svg).toBeVisible();
     await expect(svg.getByText("AM / PC (Account Manager & PC)", { exact: true })).toBeVisible();
     await expect(svg.getByText("TL (Technical Lead)", { exact: true })).toBeVisible();

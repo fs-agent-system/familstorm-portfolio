@@ -4,7 +4,7 @@ import { GlowCard } from "../GlowCard";
 import { SectionWrapper } from "../SectionWrapper";
 
 export interface StatItem { value: string; label: string; detail: string; }
-export interface ComparisonBar { metric: string; traditional: string; familstorm: string; speedup: string; traditionalWidth?: string; familstormWidth?: string; }
+export interface ComparisonBar { metric: string; traditional: string; hagdonit: string; speedup: string; traditionalWidth?: string; hagdonitWidth?: string; }
 export interface ReviewGate { number: string; name: string; tag: string; rule: string; }
 
 export interface MetricsSectionProps {
@@ -27,10 +27,10 @@ const DEFAULT_STATS: StatItem[] = [
 ];
 
 const DEFAULT_BARS: ComparisonBar[] = [
-  { metric: "Standard Module Cycle", traditional: "1–2 weeks", familstorm: "24–48 hours", speedup: "5x faster", traditionalWidth: "100%", familstormWidth: "20%" },
-  { metric: "Full Platform Delivery", traditional: "4–6 months", familstorm: "6–8 weeks", speedup: "3x faster", traditionalWidth: "100%", familstormWidth: "35%" },
-  { metric: "Engineering Headcount", traditional: "8–10 engineers", familstorm: "2–3 specialists", speedup: "70% leaner", traditionalWidth: "100%", familstormWidth: "25%" },
-  { metric: "Human Labor Hours", traditional: "100% baseline", familstorm: "30%–40% effort", speedup: "60–70% saved", traditionalWidth: "100%", familstormWidth: "35%" },
+  { metric: "Standard Module Cycle", traditional: "1–2 weeks", hagdonit: "24–48 hours", speedup: "5x faster", traditionalWidth: "100%", hagdonitWidth: "20%" },
+  { metric: "Full Platform Delivery", traditional: "4–6 months", hagdonit: "6–8 weeks", speedup: "3x faster", traditionalWidth: "100%", hagdonitWidth: "35%" },
+  { metric: "Engineering Headcount", traditional: "8–10 engineers", hagdonit: "2–3 specialists", speedup: "70% leaner", traditionalWidth: "100%", hagdonitWidth: "25%" },
+  { metric: "Human Labor Hours", traditional: "100% baseline", hagdonit: "30%–40% effort", speedup: "60–70% saved", traditionalWidth: "100%", hagdonitWidth: "35%" },
 ];
 
 const DEFAULT_GATES: ReviewGate[] = [
@@ -88,11 +88,11 @@ export function MetricsSection({
                   <div className="bg-blue-600 h-full rounded-full" style={{ width: bar.traditionalWidth || "100%" }} />
                 </div>
                 <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                  <div className="bg-sky-400 h-full rounded-full" style={{ width: bar.familstormWidth || "25%" }} />
+                  <div className="bg-sky-400 h-full rounded-full" style={{ width: bar.hagdonitWidth || "25%" }} />
                 </div>
                 <div className="flex items-center justify-between text-[11px] text-slate-400 mt-1">
                   <span>Traditional: {bar.traditional}</span>
-                  <span className="text-sky-300 font-semibold font-mono">Familstorm: {bar.familstorm}</span>
+                  <span className="text-sky-300 font-semibold font-mono">Hagdonit: {bar.hagdonit}</span>
                 </div>
               </div>
             ))}
