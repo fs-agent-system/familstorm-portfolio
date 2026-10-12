@@ -37,7 +37,7 @@ const DEFAULT_MOBILE_ITEMS: NavItem[] = [
 ];
 
 export function Nav({
-  brandName = "Familstorm",
+  brandName = "Hagdonit",
   items = DEFAULT_ITEMS,
   mobileItems = DEFAULT_MOBILE_ITEMS,
   ctaLabel = "Get in Touch",
@@ -88,7 +88,7 @@ export function Nav({
             className="w-8 h-8 rounded-lg bg-brand-secondary flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/30 group-hover:bg-brand-accent transition-colors"
             aria-hidden="true"
           >
-            F
+            H
           </div>
           <span className="text-lg sm:text-xl font-bold text-brand-text tracking-tight group-hover:text-brand-accent transition-colors">
             {brandName}
