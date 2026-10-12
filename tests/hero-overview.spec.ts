@@ -18,7 +18,7 @@ test.describe("Hero and Overview Sections", () => {
 
     // H1 headline with gradient text
     const h1 = hero.locator("h1");
-    await expect(h1).toHaveText("Familstorm — AI-Driven Development");
+    await expect(h1).toHaveText("Hagdonit — AI-Driven Development");
     await expect(h1).toHaveClass(/text-gradient/);
 
     // Subtitle paragraph
@@ -51,11 +51,11 @@ test.describe("Hero and Overview Sections", () => {
     // Eyebrow and title
     await expect(overview.getByText("FOUNDATION")).toBeVisible();
     const h2 = overview.locator("h2");
-    await expect(h2).toHaveText("Familstorm Overview");
+    await expect(h2).toHaveText("Hagdonit Overview");
 
     // Descriptive lead copy
     await expect(
-      overview.getByText(/Familstorm is an engineering studio based in Vietnam/i)
+      overview.getByText(/Hagdonit is an engineering studio based in Vietnam/i)
     ).toBeVisible();
 
     // 3 Pillar cards
