@@ -79,7 +79,7 @@ test.describe("Collaboration Models and Contact/Footer Sections", () => {
   test("Legal Footer component renders copyright and required navigation links", async ({ page }) => {
     const contact = page.locator("#contact");
     await expect(contact).toBeVisible();
-    await expect(contact.getByText("© 2026 Familstorm. Autonomous AI-Driven Software Engineering. All rights reserved.")).toBeVisible();
+    await expect(contact.getByText("© 2026 Hagdonit. Autonomous AI-Driven Software Engineering. All rights reserved.")).toBeVisible();
     await expect(contact.locator("a[href='#hero']")).toHaveText("Back to Top");
     await expect(contact.locator("a[href='/print']")).toHaveText("Print / PDF");
     await expect(contact.locator("a[href='/dev-preview']")).toHaveText("Dev Preview");
