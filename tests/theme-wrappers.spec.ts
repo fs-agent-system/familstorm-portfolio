@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Theme and Shared Layout Wrappers", () => {
   test("dev-preview page renders all base primitives and wrappers", async ({ page }) => {
     await page.goto("/dev-preview");
-    await expect(page).toHaveTitle(/Familstorm/);
+    await expect(page).toHaveTitle(/Hagdonit/);
     await expect(page.locator("#preview-tokens")).toBeVisible();
     for (const b of ["Default Badge", "Accent Glow", "Success", "Warning", "Error", "Info"]) {
       await expect(page.getByText(b)).toBeVisible();

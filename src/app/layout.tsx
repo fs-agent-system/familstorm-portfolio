@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Familstorm — AI-Driven Development",
+  title: "Hagdonit — AI-Driven Development",
   description:
     "Enterprise Software & Complex Systems Engineered via Multi-Agent AI Pipelines",
   openGraph: {
-    title: "Familstorm — AI-Driven Development",
+    title: "Hagdonit — AI-Driven Development",
     description:
       "Enterprise Software & Complex Systems Engineered via Multi-Agent AI Pipelines",
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Familstorm — AI-Driven Development",
+    title: "Hagdonit — AI-Driven Development",
     description:
       "Enterprise Software & Complex Systems Engineered via Multi-Agent AI Pipelines",
   },

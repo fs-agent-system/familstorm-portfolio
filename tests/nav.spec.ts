@@ -20,8 +20,8 @@ test.describe("Top Menu (Nav) and Mobile Navigation Menu", () => {
       // Brand logo and name
       const brand = header.locator('a[href="#hero"]');
       await expect(brand).toBeVisible();
-      await expect(brand).toContainText("Familstorm");
-      await expect(brand).toContainText("F");
+      await expect(brand).toContainText("Hagdonit");
+      await expect(brand).toContainText("H");
 
       // Desktop navigation items
       const desktopNav = header.locator('nav[aria-label="Main Navigation"]');
@@ -74,7 +74,7 @@ test.describe("Top Menu (Nav) and Mobile Navigation Menu", () => {
       // Brand logo
       const brand = header.locator('a[href="#hero"]');
       await expect(brand).toBeVisible();
-      await expect(brand).toContainText("Familstorm");
+      await expect(brand).toContainText("Hagdonit");
 
       // Desktop nav and desktop CTA container hidden
       const desktopNav = header.locator('nav[aria-label="Main Navigation"]');
